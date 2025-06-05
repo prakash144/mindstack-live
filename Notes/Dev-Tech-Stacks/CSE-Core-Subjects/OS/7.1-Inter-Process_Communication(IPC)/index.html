@@ -1,0 +1,2621 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A comprehensive knowledge base covering various domains like AI, Cloud, Tech Stacks, Interview Practice, and UPSC Resources.">
+      
+      
+        <meta name="author" content="Mind Stack Team">
+      
+      
+        <link rel="canonical" href="https://mindstack-notes.com/Notes/Dev-Tech-Stacks/CSE-Core-Subjects/OS/7.1-Inter-Process_Communication%28IPC%29/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>📌 Inter-Process Communication (IPC) - Mind Stack</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#inter-process-communication-ipc" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="Mind Stack" class="md-header__button md-logo" aria-label="Mind Stack" data-md-component="logo">
+      
+  <img src="../../../../../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mind Stack
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              📌 Inter-Process Communication (IPC)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../interview-prep/" class="md-tabs__link">
+          
+  
+  
+  Interview Prep
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../AI-Knowledge-Hub/" class="md-tabs__link">
+          
+  
+  
+  AI Knowledge Hub
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Cloud-Architect-Notes/" class="md-tabs__link">
+          
+  
+  
+  Cloud Architect Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+  Dev Tech Stacks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Interview-Coding-Practice/" class="md-tabs__link">
+          
+  
+  
+  Interview Coding Practice
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../UPSC-Resources/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  UPSC Resources
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Mind Stack" class="md-nav__button md-logo" aria-label="Mind Stack" data-md-component="logo">
+      
+  <img src="../../../../../assets/images/logo.png" alt="logo">
+
+    </a>
+    Mind Stack
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Interview Prep
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Interview Prep
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Experience
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Experience
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About Me
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Thales-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thales Experience
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Oracle-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Oracle Experience
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Delhivery-CallHealth-Experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Delhivery & CallHealth Experience
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Behavioral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Behavioral & Soft Skills
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Technical-Backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Technical - Backend
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Technical-Frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Technical - Frontend
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Databases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Databases
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Code-Quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing & Code Quality
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Dev-Ops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DevOps & CI/CD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Agile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agile Methodologies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    AI Knowledge Hub
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            AI Knowledge Hub
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../AI-Knowledge-Hub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../AI-Knowledge-Hub/Prompt-Engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Cloud Architect Notes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud Architect Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cloud-Architect-Notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    AWS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            AWS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cloud-Architect-Notes/AWS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AWS Certification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    GCP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            GCP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cloud-Architect-Notes/GCP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GCP Certification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Dev Tech Stacks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Dev Tech Stacks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CSE Core
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            CSE Core
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer%20Networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computer Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operating Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DBMS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DBMS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Java
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Java
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/Quick-Revision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick Revision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/Core-Java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Core Java
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/Spring-Boot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Core-Python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Core Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Python-For-Interview-Notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python Interview Notes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Python-For-All/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Complete Python Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Flask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flask Framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/concurrency-control-python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Concurrency in Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Golang
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Golang
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Golang/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    DevOps
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            DevOps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DevOps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Interview Coding Practice
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Interview Coding Practice
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            System Design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/src/Solid-Principles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SOLID Principles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/src/HLD-Concept/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HLD Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/src/HLD-Interview-Questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HLD Interview Questions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/src/LLD-Design-Patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LLD Concepts & Design Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/src/LLD-Interview-Questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LLD Interview Questions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    DSA
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            DSA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/src/DSA/DSA-PATTERNS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/src/DSA/DSA-SHEET/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sheet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/google-docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Docs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../UPSC-Resources/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UPSC Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      📖 Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-passing-ipc" class="md-nav__link">
+    <span class="md-ellipsis">
+      📩 Message Passing IPC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📩 Message Passing IPC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-message-passing" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✨ What is Message Passing?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 How It Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disadvantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❌ Disadvantages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shared-memory-ipc" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Shared Memory IPC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Shared Memory IPC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-shared-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✨ What is Shared Memory?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 How It Works
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disadvantages_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❌ Disadvantages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-message-passing-vs-shared-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚖️ Comparison: Message Passing vs Shared Memory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#signals-and-signal-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔔 Signals and Signal Handling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔔 Signals and Signal Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✨ What are Signals?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-signals-are-generated" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 How Signals Are Generated
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signal-delivery-and-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      📬 Signal Delivery and Handling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ Common Signals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advantages_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❌ Challenges
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="inter-process-communication-ipc">📌 Inter-Process Communication (IPC)<a class="headerlink" href="#inter-process-communication-ipc" title="Permanent link">&para;</a></h1>
+<h2 id="table-of-contents">📖 Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#message-passing-ipc">Message Passing IPC</a><ul>
+<li><a href="#how-it-works">How It Works</a></li>
+<li><a href="#advantages">Advantages</a></li>
+<li><a href="#disadvantages">Disadvantages</a></li>
+</ul>
+</li>
+<li><a href="#shared-memory-ipc">Shared Memory IPC</a><ul>
+<li><a href="#how-it-works-1">How It Works</a></li>
+<li><a href="#advantages-1">Advantages</a></li>
+<li><a href="#disadvantages-1">Disadvantages</a></li>
+</ul>
+</li>
+<li><a href="#comparison-message-passing-vs-shared-memory">Comparison: Message Passing vs Shared Memory</a></li>
+<li><a href="#signals-and-signal-handling">Signals and Signal Handling</a><ul>
+<li><a href="#how-signals-are-generated">How Signals Are Generated</a></li>
+<li><a href="#signal-delivery-and-handling">Signal Delivery and Handling</a></li>
+<li><a href="#common-signals">Common Signals</a></li>
+<li><a href="#advantages-2">Advantages</a></li>
+<li><a href="#challenges">Challenges</a></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="introduction">🏗️ Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Inter-Process Communication (IPC) enables processes to exchange data and synchronize their actions efficiently. These processes may run on the same system or across a network.</p>
+<p>🔹 <strong>Real-Life Analogy:</strong> Think of a busy office where employees collaborate using emails (messages) or a shared whiteboard (shared memory).</p>
+<hr />
+<h2 id="message-passing-ipc">📩 Message Passing IPC<a class="headerlink" href="#message-passing-ipc" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-message-passing">✨ What is Message Passing?<a class="headerlink" href="#what-is-message-passing" title="Permanent link">&para;</a></h3>
+<p>Message passing is an IPC method where processes communicate by sending and receiving messages via communication channels managed by the OS.</p>
+<p>💡 <strong>Analogy:</strong> Imagine two colleagues working in separate offices using a shared mailbox to exchange messages.</p>
+<h3 id="how-it-works">🔄 How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Message Creation</strong> 📝 - A process structures the data into a message.</li>
+<li><strong>Sending the Message</strong> 🚀 - The OS stores the message in a queue or pipe.</li>
+<li><strong>Receiving the Message</strong> 📥 - The recipient reads the message from the queue.</li>
+<li><strong>Processing</strong> 🔄 - The receiver processes the message and may respond.</li>
+</ol>
+<h3 id="advantages">✅ Advantages<a class="headerlink" href="#advantages" title="Permanent link">&para;</a></h3>
+<p>✔️ Isolation: No shared memory, reducing security risks.
+✔️ Modularity: Well-defined communication channels.
+✔️ Synchronization: Built-in message acknowledgment.
+✔️ Network-Friendly: Supports distributed systems.</p>
+<h3 id="disadvantages">❌ Disadvantages<a class="headerlink" href="#disadvantages" title="Permanent link">&para;</a></h3>
+<p>❌ Overhead: Message copying and context switches add processing time.
+❌ Complexity: Requires additional mechanisms for ordering and delivery.
+❌ Buffering Issues: Limited queue sizes may cause message loss or delays.</p>
+<hr />
+<h2 id="shared-memory-ipc">🛠️ Shared Memory IPC<a class="headerlink" href="#shared-memory-ipc" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-shared-memory">✨ What is Shared Memory?<a class="headerlink" href="#what-is-shared-memory" title="Permanent link">&para;</a></h3>
+<p>Shared memory allows multiple processes to read and write to a common memory region for fast communication.</p>
+<p>💡 <strong>Analogy:</strong> A large whiteboard where multiple team members can write and read information, but synchronization is needed to avoid conflicts.</p>
+<h3 id="how-it-works_1">🔄 How It Works<a class="headerlink" href="#how-it-works_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Memory Allocation</strong> 📌 - The OS sets up a shared memory segment.</li>
+<li><strong>Attaching to Shared Memory</strong> 🔗 - Processes gain access.</li>
+<li><strong>Data Access</strong> 📝 - Processes read/write directly.</li>
+<li><strong>Synchronization</strong> 🔄 - Mutexes/semaphores prevent data corruption.</li>
+</ol>
+<h3 id="advantages_1">✅ Advantages<a class="headerlink" href="#advantages_1" title="Permanent link">&para;</a></h3>
+<p>✔️ High Performance: No message copying required.
+✔️ Large Data Sharing: Suitable for bulk data exchange.
+✔️ Efficient Communication: Low-latency data access.</p>
+<h3 id="disadvantages_1">❌ Disadvantages<a class="headerlink" href="#disadvantages_1" title="Permanent link">&para;</a></h3>
+<p>❌ Synchronization Complexity: Requires semaphores/mutexes.
+❌ Memory Management: Manual allocation and cleanup needed.
+❌ Limited to Local Systems: Does not easily work across networks.</p>
+<hr />
+<h2 id="comparison-message-passing-vs-shared-memory">⚖️ Comparison: Message Passing vs Shared Memory<a class="headerlink" href="#comparison-message-passing-vs-shared-memory" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Message Passing 📩</th>
+<th>Shared Memory 🛠️</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data Exchange</strong></td>
+<td>Send/Receive messages</td>
+<td>Direct memory access</td>
+</tr>
+<tr>
+<td><strong>Synchronization</strong></td>
+<td>Implicit (via send/receive)</td>
+<td>Explicit (via locks)</td>
+</tr>
+<tr>
+<td><strong>Performance</strong></td>
+<td>Slower (copying overhead)</td>
+<td>Faster (direct access)</td>
+</tr>
+<tr>
+<td><strong>Scalability</strong></td>
+<td>Works well in networks</td>
+<td>Limited to a single machine</td>
+</tr>
+<tr>
+<td><strong>Complexity</strong></td>
+<td>Easier to implement</td>
+<td>Requires careful synchronization</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="signals-and-signal-handling">🔔 Signals and Signal Handling<a class="headerlink" href="#signals-and-signal-handling" title="Permanent link">&para;</a></h2>
+<h3 id="what-are-signals">✨ What are Signals?<a class="headerlink" href="#what-are-signals" title="Permanent link">&para;</a></h3>
+<p>A signal is a software interrupt notifying a process about an event (e.g., errors, user actions, system events).</p>
+<p>💡 <strong>Analogy:</strong> Imagine you're reading a book, and someone rings the doorbell 📢. You must decide whether to answer, ignore it, or send someone else.</p>
+<h3 id="how-signals-are-generated">🔄 How Signals Are Generated<a class="headerlink" href="#how-signals-are-generated" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>User Interaction</strong> ⌨️ - Pressing <code>Ctrl+C</code> sends <code>SIGINT</code>.</li>
+<li><strong>Software Conditions</strong> ⚠️ - Division by zero triggers <code>SIGFPE</code>.</li>
+<li><strong>Kernel Events</strong> ⏳ - Timers expiring generate <code>SIGALRM</code>.</li>
+<li><strong>Other Processes</strong> 📡 - Processes can signal each other using <code>kill()</code>.</li>
+</ol>
+<h3 id="signal-delivery-and-handling">📬 Signal Delivery and Handling<a class="headerlink" href="#signal-delivery-and-handling" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Signal Raised</strong> 🔔 - An event generates a signal.</li>
+<li><strong>Delivery</strong> 🚀 - The OS delivers it to the process.</li>
+<li><strong>Handling</strong> 🤖 - The process either handles it, ignores it, or terminates.</li>
+</ol>
+<h3 id="common-signals">⚡ Common Signals<a class="headerlink" href="#common-signals" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SIGINT</code></td>
+<td>Interrupt</td>
+<td>Sent when <code>Ctrl+C</code> is pressed.</td>
+</tr>
+<tr>
+<td><code>SIGTERM</code></td>
+<td>Termination</td>
+<td>Requests process termination.</td>
+</tr>
+<tr>
+<td><code>SIGKILL</code></td>
+<td>Kill</td>
+<td>Forcefully terminates a process.</td>
+</tr>
+<tr>
+<td><code>SIGSEGV</code></td>
+<td>Segmentation Fault</td>
+<td>Invalid memory access.</td>
+</tr>
+<tr>
+<td><code>SIGALRM</code></td>
+<td>Alarm</td>
+<td>Triggered by a timer.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="advantages_2">✅ Advantages<a class="headerlink" href="#advantages_2" title="Permanent link">&para;</a></h3>
+<p>✔️ Immediate notifications for process events.
+✔️ Lightweight and low-overhead mechanism.
+✔️ Allows graceful process shutdowns.</p>
+<h3 id="challenges">❌ Challenges<a class="headerlink" href="#challenges" title="Permanent link">&para;</a></h3>
+<p>❌ Asynchronous execution complicates handling.
+❌ Limited data in signals.
+❌ Safe signal handling requires cautious design.</p>
+<hr />
+<h2 id="conclusion">🚀 Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>Choosing between <strong>Message Passing</strong>, <strong>Shared Memory</strong>, or <strong>Signals</strong> depends on system needs:
+- <strong>For modular, isolated communication</strong> ➝ Use <strong>Message Passing</strong> 📩.
+- <strong>For high-speed data sharing on the same machine</strong> ➝ Use <strong>Shared Memory</strong> 🛠️.
+- <strong>For asynchronous event handling</strong> ➝ Use <strong>Signals</strong> 🔔.</p>
+<p>Mastering these IPC techniques is crucial for building efficient, scalable, and well-coordinated systems. 💡🚀</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.top", "content.tabs.link", "content.code.copy", "content.action.edit"], "search": "../../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../../../../assets/javascripts/custom.js"></script>
+      
+        <script src="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"></script>
+      
+        <script src="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap"></script>
+      
+    
+  </body>
+</html>

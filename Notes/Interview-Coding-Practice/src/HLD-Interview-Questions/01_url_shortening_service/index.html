@@ -1,0 +1,2831 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A comprehensive knowledge base covering various domains like AI, Cloud, Tech Stacks, Interview Practice, and UPSC Resources.">
+      
+      
+        <meta name="author" content="Mind Stack Team">
+      
+      
+        <link rel="canonical" href="https://mindstack-notes.com/Notes/Interview-Coding-Practice/src/HLD-Interview-Questions/01_url_shortening_service/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>🚀 URL Shortening System Design Notes - Mind Stack</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#url-shortening-system-design-notes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="Mind Stack" class="md-header__button md-logo" aria-label="Mind Stack" data-md-component="logo">
+      
+  <img src="../../../../../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mind Stack
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🚀 URL Shortening System Design Notes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../interview-prep/" class="md-tabs__link">
+          
+  
+  
+  Interview Prep
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../AI-Knowledge-Hub/" class="md-tabs__link">
+          
+  
+  
+  AI Knowledge Hub
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Cloud-Architect-Notes/" class="md-tabs__link">
+          
+  
+  
+  Cloud Architect Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Dev-Tech-Stacks/" class="md-tabs__link">
+          
+  
+  
+  Dev Tech Stacks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+  Interview Coding Practice
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../UPSC-Resources/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  UPSC Resources
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Mind Stack" class="md-nav__button md-logo" aria-label="Mind Stack" data-md-component="logo">
+      
+  <img src="../../../../../assets/images/logo.png" alt="logo">
+
+    </a>
+    Mind Stack
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Interview Prep
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Interview Prep
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Experience
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Experience
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About Me
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Thales-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thales Experience
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Oracle-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Oracle Experience
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Delhivery-CallHealth-Experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Delhivery & CallHealth Experience
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Behavioral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Behavioral & Soft Skills
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Technical-Backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Technical - Backend
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Technical-Frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Technical - Frontend
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Databases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Databases
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Code-Quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing & Code Quality
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Dev-Ops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DevOps & CI/CD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Agile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agile Methodologies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    AI Knowledge Hub
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            AI Knowledge Hub
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../AI-Knowledge-Hub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../AI-Knowledge-Hub/Prompt-Engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Cloud Architect Notes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud Architect Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cloud-Architect-Notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    AWS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            AWS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cloud-Architect-Notes/AWS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AWS Certification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    GCP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            GCP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cloud-Architect-Notes/GCP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GCP Certification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Dev Tech Stacks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Dev Tech Stacks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev-Tech-Stacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CSE Core
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            CSE Core
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev-Tech-Stacks/CSE-Core-Subjects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev-Tech-Stacks/CSE-Core-Subjects/Computer%20Networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computer Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev-Tech-Stacks/CSE-Core-Subjects/OS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operating Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev-Tech-Stacks/CSE-Core-Subjects/DBMS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DBMS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Java
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Java
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev-Tech-Stacks/Java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev-Tech-Stacks/Java/Quick-Revision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick Revision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev-Tech-Stacks/Java/Core-Java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Core Java
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev-Tech-Stacks/Java/Spring-Boot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev-Tech-Stacks/Python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev-Tech-Stacks/Python/Core-Python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Core Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev-Tech-Stacks/Python/Python-For-Interview-Notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python Interview Notes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev-Tech-Stacks/Python/Python-For-All/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Complete Python Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev-Tech-Stacks/Python/Flask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flask Framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev-Tech-Stacks/Python/concurrency-control-python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Concurrency in Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Golang
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Golang
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev-Tech-Stacks/Golang/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    DevOps
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            DevOps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Dev-Tech-Stacks/DevOps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Interview Coding Practice
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Interview Coding Practice
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            System Design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Solid-Principles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SOLID Principles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HLD-Concept/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HLD Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HLD Interview Questions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LLD-Design-Patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LLD Concepts & Design Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LLD-Interview-Questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LLD Interview Questions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    DSA
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            DSA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DSA/DSA-PATTERNS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DSA/DSA-SHEET/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sheet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../google-docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Docs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../UPSC-Resources/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UPSC Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-why-do-we-need-url-shortening" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 1. Why do we need URL Shortening?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-requirements-and-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 2. Requirements and Goals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 2. Requirements and Goals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functional-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Functional Requirements:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-functional-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Non-Functional Requirements:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extended-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Extended Requirements:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-capacity-estimation-and-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ 3. Capacity Estimation and Constraints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ 3. Capacity Estimation and Constraints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#traffic-estimates" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔥 Traffic Estimates:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-estimates" class="md-nav__link">
+    <span class="md-ellipsis">
+      💾 Storage Estimates:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bandwidth-estimates" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Bandwidth Estimates:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-estimates" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛑 Memory Estimates:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-system-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌐 4. System APIs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌐 4. System APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-url-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Create URL API:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-url-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❌ Delete URL API:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-database-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗃️ 5. Database Design
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🗃️ 5. Database Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      💾 Schema:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#db-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ DB Choice:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-key-generation-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔑 6. Key Generation Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔑 6. Key Generation Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-encoding-actual-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔒 a) Encoding Actual URL:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-generating-keys-offline" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ b) Generating Keys Offline:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-data-partitioning-replication" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔥 7. Data Partitioning &amp; Replication
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔥 7. Data Partitioning &amp; Replication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partitioning-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Partitioning Methods:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-cache-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔥 8. Cache Layer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔥 8. Cache Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caching-hot-urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ Caching hot URLs:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      💾 Cache Size:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-load-balancing" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚖️ 9. Load Balancing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚖️ 9. Load Balancing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lb-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ LB Layers:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lb-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ LB Strategies:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-db-cleanup-purging" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔥 10. DB Cleanup &amp; Purging
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔥 10. DB Cleanup &amp; Purging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expiration-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Expiration handling:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-telemetry-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 11. Telemetry &amp; Analytics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 11. Telemetry &amp; Analytics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Tracking:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-security-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔒 12. Security &amp; Permissions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔒 12. Security &amp; Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛡️ Access Control:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔗 References:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="url-shortening-system-design-notes">🚀 URL Shortening System Design Notes<a class="headerlink" href="#url-shortening-system-design-notes" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="1-why-do-we-need-url-shortening">📚 <strong>1. Why do we need URL Shortening?</strong><a class="headerlink" href="#1-why-do-we-need-url-shortening" title="Permanent link">&para;</a></h2>
+<ul>
+<li>🔗 <strong>Short aliases</strong> for long URLs ➝ easier to share, tweet, and print.</li>
+<li>🔥 <strong>Space-saving</strong>: Short URLs take less space in messages.</li>
+<li>🔍 <strong>Tracking &amp; Analytics</strong>: Measure clicks and performance.</li>
+<li>🛡️ <strong>Hiding affiliated URLs</strong>: Mask original URLs.</li>
+<li>📊 <strong>Optimizing links</strong>: Improve device-specific redirection.</li>
+</ul>
+<hr />
+<h2 id="2-requirements-and-goals">🎯 <strong>2. Requirements and Goals</strong><a class="headerlink" href="#2-requirements-and-goals" title="Permanent link">&para;</a></h2>
+<h3 id="functional-requirements">✅ <strong>Functional Requirements:</strong><a class="headerlink" href="#functional-requirements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>🎯 Shorten long URLs to unique short aliases.</li>
+<li>🔗 Redirect short URLs to original URLs.</li>
+<li>✍️ Allow custom short links (optional).</li>
+<li>⏰ Set expiration time for URLs.</li>
+</ul>
+<h3 id="non-functional-requirements">⚙️ <strong>Non-Functional Requirements:</strong><a class="headerlink" href="#non-functional-requirements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>🛡️ <strong>High availability:</strong> Minimal downtime.</li>
+<li>⚡ <strong>Low latency:</strong> Real-time redirections.</li>
+<li>🔒 <strong>Security:</strong> Short links shouldn’t be guessable.</li>
+</ul>
+<h3 id="extended-requirements">📊 <strong>Extended Requirements:</strong><a class="headerlink" href="#extended-requirements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>📈 <strong>Analytics:</strong> Track redirection stats.</li>
+<li>🔥 <strong>API accessibility:</strong> Provide REST APIs.</li>
+</ul>
+<hr />
+<h2 id="3-capacity-estimation-and-constraints">⚙️ <strong>3. Capacity Estimation and Constraints</strong><a class="headerlink" href="#3-capacity-estimation-and-constraints" title="Permanent link">&para;</a></h2>
+<h3 id="traffic-estimates">🔥 <strong>Traffic Estimates:</strong><a class="headerlink" href="#traffic-estimates" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>500M</strong> new URLs/month ➝ <strong>50B</strong> redirections (100:1 read/write ratio).</li>
+<li><strong>QPS:</strong><ul>
+<li><strong>New URLs:</strong> 200/s</li>
+<li><strong>Redirections:</strong> 20K/s</li>
+</ul>
+</li>
+</ul>
+<h3 id="storage-estimates">💾 <strong>Storage Estimates:</strong><a class="headerlink" href="#storage-estimates" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>500M new URLs/month</strong> ➝ <strong>30B</strong> objects in 5 years.</li>
+<li><strong>Object size:</strong> 500 bytes ➝ <strong>15TB</strong> total storage.</li>
+</ul>
+<h3 id="bandwidth-estimates">🚀 <strong>Bandwidth Estimates:</strong><a class="headerlink" href="#bandwidth-estimates" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Write requests:</strong> 100KB/s ➝ (200 URLs * 500 bytes).</li>
+<li><strong>Read requests:</strong> 10MB/s ➝ (20K URLs * 500 bytes).</li>
+</ul>
+<h3 id="memory-estimates">🛑 <strong>Memory Estimates:</strong><a class="headerlink" href="#memory-estimates" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Cache 20% hot URLs:</strong><ul>
+<li><strong>1.7B daily requests</strong> ➝ <strong>170GB cache</strong></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="4-system-apis">🌐 <strong>4. System APIs</strong><a class="headerlink" href="#4-system-apis" title="Permanent link">&para;</a></h2>
+<h3 id="create-url-api">🛠️ <strong>Create URL API:</strong><a class="headerlink" href="#create-url-api" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="err">POST /createURL</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Parameters:</strong><ul>
+<li><code>api_dev_key</code>: API key for authentication.</li>
+<li><code>original_url</code>: Original long URL.</li>
+<li><code>custom_alias</code>: (Optional) custom short key.</li>
+<li><code>expire_date</code>: (Optional) expiry date.</li>
+</ul>
+</li>
+<li><strong>Response:</strong> Shortened URL or error code.</li>
+</ul>
+<h3 id="delete-url-api">❌ <strong>Delete URL API:</strong><a class="headerlink" href="#delete-url-api" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="err">DELETE /deleteURL</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Parameters:</strong><ul>
+<li><code>api_dev_key</code>: API key for authentication.</li>
+<li><code>url_key</code>: Shortened URL.</li>
+</ul>
+</li>
+<li><strong>Response:</strong> Confirmation or error message.</li>
+</ul>
+<hr />
+<h2 id="5-database-design">🗃️ <strong>5. Database Design</strong><a class="headerlink" href="#5-database-design" title="Permanent link">&para;</a></h2>
+<h3 id="schema">💾 <strong>Schema:</strong><a class="headerlink" href="#schema" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>URL Table:</strong></p>
+<ul>
+<li><code>id</code> (PK)</li>
+<li><code>original_url</code></li>
+<li><code>short_url</code></li>
+<li><code>created_at</code></li>
+<li><code>expire_date</code></li>
+<li><code>click_count</code></li>
+</ul>
+</li>
+<li>
+<p><strong>User Table:</strong></p>
+<ul>
+<li><code>user_id</code> (PK)</li>
+<li><code>email</code></li>
+<li><code>api_dev_key</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="db-choice">⚙️ <strong>DB Choice:</strong><a class="headerlink" href="#db-choice" title="Permanent link">&para;</a></h3>
+<ul>
+<li>🛢️ <strong>NoSQL DB:</strong> DynamoDB, Cassandra, Riak ➝ scalable and fast.</li>
+<li>🔥 <strong>Read-heavy optimization:</strong> Indexing for fast lookups.</li>
+</ul>
+<hr />
+<h2 id="6-key-generation-methods">🔑 <strong>6. Key Generation Methods</strong><a class="headerlink" href="#6-key-generation-methods" title="Permanent link">&para;</a></h2>
+<h3 id="a-encoding-actual-url">🔒 <strong>a) Encoding Actual URL:</strong><a class="headerlink" href="#a-encoding-actual-url" title="Permanent link">&para;</a></h3>
+<ul>
+<li>🔹 <strong>Hash the URL</strong> ➝ Use <strong>MD5/SHA256</strong>.</li>
+<li>🔹 <strong>Base64 encode</strong> the hash ➝ Generate short key.</li>
+<li>🔥 <strong>Issues:</strong><ul>
+<li>Duplicate keys for identical URLs.</li>
+<li>URL encoding variations.</li>
+</ul>
+</li>
+</ul>
+<h3 id="b-generating-keys-offline">⚡ <strong>b) Generating Keys Offline:</strong><a class="headerlink" href="#b-generating-keys-offline" title="Permanent link">&para;</a></h3>
+<ul>
+<li>🔥 <strong>Key Generation Service (KGS)</strong> ➝ Pre-generates unique keys.</li>
+<li>💾 <strong>Key-DB:</strong><ul>
+<li>Table for unused keys.</li>
+<li>Table for used keys.</li>
+</ul>
+</li>
+<li>🛡️ <strong>Concurrency solution:</strong><ul>
+<li>Mark keys as used immediately.</li>
+<li>Use lock mechanism to prevent duplicates.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="7-data-partitioning-replication">🔥 <strong>7. Data Partitioning &amp; Replication</strong><a class="headerlink" href="#7-data-partitioning-replication" title="Permanent link">&para;</a></h2>
+<h3 id="partitioning-methods">🛠️ <strong>Partitioning Methods:</strong><a class="headerlink" href="#partitioning-methods" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>🔢 Range-based:</strong><ul>
+<li>Store URLs by first letter in separate partitions.</li>
+<li>⚠️ Issue: Unbalanced servers.</li>
+</ul>
+</li>
+<li><strong>⚙️ Hash-based:</strong><ul>
+<li>Hash URL ➝ Determine partition.</li>
+<li>✅ <strong>Consistent hashing</strong> ➝ Prevent hotspots.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="8-cache-layer">🔥 <strong>8. Cache Layer</strong><a class="headerlink" href="#8-cache-layer" title="Permanent link">&para;</a></h2>
+<h3 id="caching-hot-urls">⚡ <strong>Caching hot URLs:</strong><a class="headerlink" href="#caching-hot-urls" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>🔥 Cache 20% of URLs</strong> ➝ Reduces DB lookups.</li>
+<li><strong>🔗 LRU Policy:</strong> Evict least recently used URLs.</li>
+<li><strong>🛡️ Replicated cache:</strong> Distribute load.</li>
+</ul>
+<h3 id="cache-size">💾 <strong>Cache Size:</strong><a class="headerlink" href="#cache-size" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>170GB cache</strong> for 20% of daily traffic.</li>
+<li>🛢️ <strong>Memcached or Redis</strong> for faster lookups.</li>
+</ul>
+<hr />
+<h2 id="9-load-balancing">⚖️ <strong>9. Load Balancing</strong><a class="headerlink" href="#9-load-balancing" title="Permanent link">&para;</a></h2>
+<h3 id="lb-layers">⚙️ <strong>LB Layers:</strong><a class="headerlink" href="#lb-layers" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Between Clients &amp; App Servers</strong> ➝ Distributes incoming traffic.</li>
+<li><strong>Between App &amp; DB Servers</strong> ➝ DB load distribution.</li>
+<li><strong>Between App &amp; Cache</strong> ➝ Balanced cache hits.</li>
+</ul>
+<h3 id="lb-strategies">⚡ <strong>LB Strategies:</strong><a class="headerlink" href="#lb-strategies" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>🔁 Round Robin:</strong> Distributes traffic evenly.</li>
+<li><strong>⚡ Intelligent LB:</strong> Queries server load ➝ Adjusts traffic.</li>
+</ul>
+<hr />
+<h2 id="10-db-cleanup-purging">🔥 <strong>10. DB Cleanup &amp; Purging</strong><a class="headerlink" href="#10-db-cleanup-purging" title="Permanent link">&para;</a></h2>
+<h3 id="expiration-handling">🛠️ <strong>Expiration handling:</strong><a class="headerlink" href="#expiration-handling" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>⌛ Lazy cleanup:</strong> Remove expired links periodically.</li>
+<li><strong>🗑️ Cleanup Service:</strong> Low-traffic period cleanup.</li>
+<li><strong>♻️ Reuse keys:</strong> Reinsert deleted keys into KGS.</li>
+</ul>
+<hr />
+<h2 id="11-telemetry-analytics">📊 <strong>11. Telemetry &amp; Analytics</strong><a class="headerlink" href="#11-telemetry-analytics" title="Permanent link">&para;</a></h2>
+<h3 id="tracking">📈 <strong>Tracking:</strong><a class="headerlink" href="#tracking" title="Permanent link">&para;</a></h3>
+<ul>
+<li>📍 Visitor’s location, device, and browser.</li>
+<li>📅 Date &amp; time of access.</li>
+<li>🔥 Popular URLs &amp; access trends.</li>
+</ul>
+<hr />
+<h2 id="12-security-permissions">🔒 <strong>12. Security &amp; Permissions</strong><a class="headerlink" href="#12-security-permissions" title="Permanent link">&para;</a></h2>
+<h3 id="access-control">🛡️ <strong>Access Control:</strong><a class="headerlink" href="#access-control" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Private URLs:</strong> Restricted access.</li>
+<li><strong>User authentication:</strong> Verify before access.</li>
+<li><strong>DB schema for permissions:</strong><ul>
+<li><code>url_id</code> ➝ <code>user_id</code></li>
+<li><strong>UserID</strong> → Access control table.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p>✅ <strong>Revision Tip:</strong>
+- 💡 Focus on key generation, caching, and load balancing strategies.
+- 🔥 Remember key metrics: QPS, cache size, and storage estimates.
+- 🚀 Master the API structure and DB schema for quick reference.</p>
+<hr />
+<h3 id="references">🔗 <strong>References:</strong><a class="headerlink" href="#references" title="Permanent link">&para;</a></h3>
+<ul>
+<li>👤<a href="https://www.udemy.com/course/system_design_lld_hld/learn/lecture/41910210#overview">Shrayansh Jain : Udemy</a></li>
+<li>👤<a href="../01-design-doc-url-shortner_1/">InterviewWithBunny : Design Doc</a></li>
+</ul>
+<hr />
+<p>✅ This document provides an organized breakdown of the URL Shortening System structure. Happy coding! 🚀</p>
+<p><img alt="URL Shortening service.png" src="../../../EducativeIO/System%20Design%20Problems/URL%20Shortening%20service.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.top", "content.tabs.link", "content.code.copy", "content.action.edit"], "search": "../../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../../../../assets/javascripts/custom.js"></script>
+      
+        <script src="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"></script>
+      
+        <script src="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap"></script>
+      
+    
+  </body>
+</html>

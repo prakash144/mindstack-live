@@ -1,0 +1,2715 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A comprehensive knowledge base covering various domains like AI, Cloud, Tech Stacks, Interview Practice, and UPSC Resources.">
+      
+      
+        <meta name="author" content="Mind Stack Team">
+      
+      
+        <link rel="canonical" href="https://mindstack-notes.com/Notes/Dev-Tech-Stacks/CSE-Core-Subjects/Computer%20Networks/4.2-Application-layer-Protocol/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>🌐 Application Layer Protocols - Mind Stack</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#application-layer-protocols" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="Mind Stack" class="md-header__button md-logo" aria-label="Mind Stack" data-md-component="logo">
+      
+  <img src="../../../../../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mind Stack
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🌐 Application Layer Protocols
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../interview-prep/" class="md-tabs__link">
+          
+  
+  
+  Interview Prep
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../AI-Knowledge-Hub/" class="md-tabs__link">
+          
+  
+  
+  AI Knowledge Hub
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Cloud-Architect-Notes/" class="md-tabs__link">
+          
+  
+  
+  Cloud Architect Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+  Dev Tech Stacks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Interview-Coding-Practice/" class="md-tabs__link">
+          
+  
+  
+  Interview Coding Practice
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../UPSC-Resources/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  UPSC Resources
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Mind Stack" class="md-nav__button md-logo" aria-label="Mind Stack" data-md-component="logo">
+      
+  <img src="../../../../../assets/images/logo.png" alt="logo">
+
+    </a>
+    Mind Stack
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Interview Prep
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Interview Prep
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Experience
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Experience
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About Me
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Thales-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thales Experience
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Oracle-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Oracle Experience
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Delhivery-CallHealth-Experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Delhivery & CallHealth Experience
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Behavioral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Behavioral & Soft Skills
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Technical-Backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Technical - Backend
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Technical-Frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Technical - Frontend
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Databases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Databases
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Code-Quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing & Code Quality
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Dev-Ops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DevOps & CI/CD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Agile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agile Methodologies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    AI Knowledge Hub
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            AI Knowledge Hub
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../AI-Knowledge-Hub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../AI-Knowledge-Hub/Prompt-Engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Cloud Architect Notes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud Architect Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cloud-Architect-Notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    AWS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            AWS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cloud-Architect-Notes/AWS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AWS Certification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    GCP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            GCP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cloud-Architect-Notes/GCP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GCP Certification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Dev Tech Stacks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Dev Tech Stacks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CSE Core
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            CSE Core
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computer Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operating Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DBMS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DBMS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Java
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Java
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/Quick-Revision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick Revision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/Core-Java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Core Java
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/Spring-Boot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Core-Python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Core Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Python-For-Interview-Notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python Interview Notes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Python-For-All/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Complete Python Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Flask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flask Framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/concurrency-control-python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Concurrency in Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Golang
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Golang
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Golang/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    DevOps
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            DevOps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DevOps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Interview Coding Practice
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Interview Coding Practice
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            System Design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/src/Solid-Principles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SOLID Principles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/src/HLD-Concept/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HLD Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/src/HLD-Interview-Questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HLD Interview Questions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/src/LLD-Design-Patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LLD Concepts & Design Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/src/LLD-Interview-Questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LLD Interview Questions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    DSA
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            DSA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/src/DSA/DSA-PATTERNS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/src/DSA/DSA-SHEET/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sheet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/google-docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Docs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../UPSC-Resources/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UPSC Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importance" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌟 Importance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-http-hypertext-transfer-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌍 1. HTTP (Hypertext Transfer Protocol)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌍 1. HTTP (Hypertext Transfer Protocol)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Key Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secure-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔒 Secure Version
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ftp-file-transfer-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      📂 2. FTP (File Transfer Protocol)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📂 2. FTP (File Transfer Protocol)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-features_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Key Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Applications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secure-version_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔒 Secure Version
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-smtp-simple-mail-transfer-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      📧 3. SMTP (Simple Mail Transfer Protocol)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📧 3. SMTP (Simple Mail Transfer Protocol)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-features_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Key Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Applications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-snmp-simple-network-management-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      📡 4. SNMP (Simple Network Management Protocol)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📡 4. SNMP (Simple Network Management Protocol)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-features_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Key Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Applications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocol-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Protocol Comparison
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-network-layers-their-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏛 Other Network Layers &amp; Their Protocols
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏛 Other Network Layers &amp; Their Protocols">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-network-layer-functions-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      📶 1. Network Layer Functions &amp; Protocols
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📶 1. Network Layer Functions &amp; Protocols">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠 Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Protocols
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-transport-layer-functions-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎛 2. Transport Layer Functions &amp; Protocols
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎛 2. Transport Layer Functions &amp; Protocols">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠 Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protocols_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Protocols
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-connection-oriented-vs-connectionless-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 3. Connection-Oriented vs. Connectionless Protocols
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏆 Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="application-layer-protocols">🌐 <strong>Application Layer Protocols</strong><a class="headerlink" href="#application-layer-protocols" title="Permanent link">&para;</a></h1>
+<p>Application layer protocols define the rules, standards, and methodologies enabling communication between applications over a network. They operate at the topmost layer of the OSI and TCP/IP models, ensuring proper data formatting, transmission, and interpretation for seamless interaction between diverse applications.</p>
+<hr />
+<h2 id="table-of-contents">📌 <strong>Table of Contents</strong><a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#-importance">🔹 Importance</a></li>
+<li><a href="#-http-hypertext-transfer-protocol">🔹 HTTP (Hypertext Transfer Protocol)</a></li>
+<li><a href="#-ftp-file-transfer-protocol">🔹 FTP (File Transfer Protocol)</a></li>
+<li><a href="#-smtp-simple-mail-transfer-protocol">🔹 SMTP (Simple Mail Transfer Protocol)</a></li>
+<li><a href="#-snmp-simple-network-management-protocol">🔹 SNMP (Simple Network Management Protocol)</a></li>
+<li><a href="#-protocol-comparison">🔹 Protocol Comparison</a></li>
+<li><a href="#-other-network-layers--their-protocols">🔹 Other Network Layers &amp; Their Protocols</a></li>
+</ul>
+<hr />
+<h2 id="importance">🌟 <strong>Importance</strong><a class="headerlink" href="#importance" title="Permanent link">&para;</a></h2>
+<p>✅ Standardized communication between applications.
+✅ Ensures compatibility across platforms and networks.
+✅ Supports critical functionalities like web browsing, email, and file transfers.</p>
+<hr />
+<h2 id="1-http-hypertext-transfer-protocol">🌍 <strong>1. HTTP (Hypertext Transfer Protocol)</strong><a class="headerlink" href="#1-http-hypertext-transfer-protocol" title="Permanent link">&para;</a></h2>
+<p>HTTP enables the transfer of hypertext data (HTML, images, videos) between a client (browser) and a server.</p>
+<h3 id="key-features">🔹 <strong>Key Features</strong><a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h3>
+<ul>
+<li>📌 <strong>Port 80</strong>: Default communication port.</li>
+<li>📌 <strong>Stateless Protocol</strong>: Each transaction is independent; mechanisms like cookies maintain session state.</li>
+<li>📌 <strong>Request Methods</strong>:<ul>
+<li>🟢 <strong>GET</strong>: Retrieve information without modifying data.</li>
+<li>🟡 <strong>POST</strong>: Send data to a server.</li>
+<li>🔵 <strong>PUT</strong>: Update or replace a resource.</li>
+<li>🔴 <strong>DELETE</strong>: Remove a resource.</li>
+</ul>
+</li>
+</ul>
+<h3 id="applications">🔹 <strong>Applications</strong><a class="headerlink" href="#applications" title="Permanent link">&para;</a></h3>
+<ul>
+<li>🌐 Web browsing.</li>
+<li>🔄 API communication.</li>
+</ul>
+<h3 id="secure-version">🔒 <strong>Secure Version</strong><a class="headerlink" href="#secure-version" title="Permanent link">&para;</a></h3>
+<p><strong>HTTPS (Hypertext Transfer Protocol Secure)</strong>: Adds SSL/TLS encryption for secure data transmission.</p>
+<hr />
+<h2 id="2-ftp-file-transfer-protocol">📂 <strong>2. FTP (File Transfer Protocol)</strong><a class="headerlink" href="#2-ftp-file-transfer-protocol" title="Permanent link">&para;</a></h2>
+<p>FTP facilitates file transfers between a client and a server.</p>
+<h3 id="key-features_1">🔹 <strong>Key Features</strong><a class="headerlink" href="#key-features_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>📌 <strong>Ports 20 &amp; 21</strong>: Port 21 for control commands; Port 20 for data transfer.</li>
+<li>📌 <strong>Modes</strong>:<ul>
+<li>🟢 <strong>Active</strong>: Client opens a port; server connects to it.</li>
+<li>🔵 <strong>Passive</strong>: Server opens a port; client connects (firewall-friendly).</li>
+</ul>
+</li>
+<li>📌 <strong>Authentication</strong>: Uses usernames and passwords; anonymous FTP allows public access.</li>
+</ul>
+<h3 id="applications_1">🔹 <strong>Applications</strong><a class="headerlink" href="#applications_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>📁 Large file transfers.</li>
+<li>💾 Data backups.</li>
+</ul>
+<h3 id="secure-version_1">🔒 <strong>Secure Version</strong><a class="headerlink" href="#secure-version_1" title="Permanent link">&para;</a></h3>
+<p><strong>SFTP (SSH File Transfer Protocol)</strong>: Uses SSH for encryption.</p>
+<hr />
+<h2 id="3-smtp-simple-mail-transfer-protocol">📧 <strong>3. SMTP (Simple Mail Transfer Protocol)</strong><a class="headerlink" href="#3-smtp-simple-mail-transfer-protocol" title="Permanent link">&para;</a></h2>
+<p>SMTP is used for sending emails between mail servers.</p>
+<h3 id="key-features_2">🔹 <strong>Key Features</strong><a class="headerlink" href="#key-features_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>📌 <strong>Port Numbers</strong>: 25 (standard), 465 &amp; 587 (secure connections).</li>
+<li>📌 <strong>Email Sending</strong>: Only handles message transmission; retrieval is done via POP3 or IMAP.</li>
+<li>📌 <strong>Relaying</strong>: Forwards emails across mail servers.</li>
+</ul>
+<h3 id="applications_2">🔹 <strong>Applications</strong><a class="headerlink" href="#applications_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>📩 Personal and enterprise email systems.</li>
+<li>📢 Email automation (notifications, newsletters).</li>
+</ul>
+<hr />
+<h2 id="4-snmp-simple-network-management-protocol">📡 <strong>4. SNMP (Simple Network Management Protocol)</strong><a class="headerlink" href="#4-snmp-simple-network-management-protocol" title="Permanent link">&para;</a></h2>
+<p>SNMP facilitates network monitoring, management, and configuration.</p>
+<h3 id="key-features_3">🔹 <strong>Key Features</strong><a class="headerlink" href="#key-features_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>📌 <strong>Ports 161 &amp; 162</strong>: Queries (161), Alerts (162).</li>
+<li>📌 <strong>Components</strong>:<ul>
+<li>🖥️ <strong>Managed Devices</strong>: Routers, servers, etc.</li>
+<li>📡 <strong>SNMP Agents</strong>: Collect and send device data.</li>
+<li>📊 <strong>SNMP Manager</strong>: Central system for monitoring.</li>
+</ul>
+</li>
+<li>📌 <strong>Versions</strong>: SNMPv1 (basic), SNMPv2 (enhanced), SNMPv3 (secure).</li>
+</ul>
+<h3 id="applications_3">🔹 <strong>Applications</strong><a class="headerlink" href="#applications_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>📶 Network monitoring.</li>
+<li>🔍 Fault detection.</li>
+<li>🔧 Device management.</li>
+</ul>
+<hr />
+<h2 id="protocol-comparison">📊 <strong>Protocol Comparison</strong><a class="headerlink" href="#protocol-comparison" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Purpose</th>
+<th>Port</th>
+<th>Secure Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🌐 HTTP</td>
+<td>Web browsing</td>
+<td>80</td>
+<td>HTTPS (SSL/TLS)</td>
+</tr>
+<tr>
+<td>📂 FTP</td>
+<td>File transfer</td>
+<td>20, 21</td>
+<td>SFTP (SSH)</td>
+</tr>
+<tr>
+<td>📧 SMTP</td>
+<td>Email sending</td>
+<td>25, 465, 587</td>
+<td>Secure SMTP</td>
+</tr>
+<tr>
+<td>📡 SNMP</td>
+<td>Network monitoring</td>
+<td>161, 162</td>
+<td>SNMPv3 (Encryption)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="other-network-layers-their-protocols">🏛 <strong>Other Network Layers &amp; Their Protocols</strong><a class="headerlink" href="#other-network-layers-their-protocols" title="Permanent link">&para;</a></h2>
+<h3 id="1-network-layer-functions-protocols">📶 <strong>1. Network Layer Functions &amp; Protocols</strong><a class="headerlink" href="#1-network-layer-functions-protocols" title="Permanent link">&para;</a></h3>
+<h4 id="functions">🛠 <strong>Functions</strong><a class="headerlink" href="#functions" title="Permanent link">&para;</a></h4>
+<ul>
+<li>🏷️ <strong>Addressing</strong>: Assigns logical IP addresses.</li>
+<li>📍 <strong>Routing</strong>: Determines optimal paths for data.</li>
+<li>📤 <strong>Packet Forwarding</strong>: Transfers packets based on routing tables.</li>
+<li>📦 <strong>Fragmentation &amp; Reassembly</strong>: Splits large packets and reassembles them.</li>
+</ul>
+<h4 id="protocols">🔹 <strong>Protocols</strong><a class="headerlink" href="#protocols" title="Permanent link">&para;</a></h4>
+<ul>
+<li>🌍 <strong>IP (Internet Protocol)</strong>: Handles addressing and routing.<ul>
+<li>📡 <strong>IPv4</strong>: 32-bit, limited addresses.</li>
+<li>🔢 <strong>IPv6</strong>: 128-bit, expanded capacity.</li>
+</ul>
+</li>
+<li>🔍 <strong>ICMP (Internet Control Message Protocol)</strong>: Network diagnostics (ping).</li>
+<li>🔄 <strong>ARP (Address Resolution Protocol)</strong>: Maps IP to MAC addresses.</li>
+<li>🚦 <strong>BGP (Border Gateway Protocol)</strong>: Internet-scale routing.</li>
+</ul>
+<hr />
+<h3 id="2-transport-layer-functions-protocols">🎛 <strong>2. Transport Layer Functions &amp; Protocols</strong><a class="headerlink" href="#2-transport-layer-functions-protocols" title="Permanent link">&para;</a></h3>
+<h4 id="functions_1">🛠 <strong>Functions</strong><a class="headerlink" href="#functions_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>🧩 <strong>Segmentation &amp; Reassembly</strong>: Breaks/reconstructs data for transmission.</li>
+<li>✅ <strong>Error Detection &amp; Recovery</strong>: Ensures data integrity.</li>
+<li>🚦 <strong>Flow Control</strong>: Prevents congestion.</li>
+<li>🔢 <strong>Port Addressing</strong>: Identifies services (e.g., web on port 80, email on port 25).</li>
+</ul>
+<h4 id="protocols_1">🔹 <strong>Protocols</strong><a class="headerlink" href="#protocols_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>🔄 <strong>TCP (Transmission Control Protocol)</strong>: Reliable, connection-oriented.</li>
+<li>⚡ <strong>UDP (User Datagram Protocol)</strong>: Fast, connectionless.</li>
+<li>🔗 <strong>SCTP (Stream Control Transmission Protocol)</strong>: Combines TCP &amp; UDP features.</li>
+</ul>
+<hr />
+<h3 id="3-connection-oriented-vs-connectionless-protocols">🔄 <strong>3. Connection-Oriented vs. Connectionless Protocols</strong><a class="headerlink" href="#3-connection-oriented-vs-connectionless-protocols" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Connection-Oriented</th>
+<th>Connectionless</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ <strong>Reliability</strong></td>
+<td>Ensured (acknowledgments, retransmissions)</td>
+<td>No delivery guarantees</td>
+</tr>
+<tr>
+<td>🔌 <strong>Setup</strong></td>
+<td>Requires connection establishment</td>
+<td>No setup required</td>
+</tr>
+<tr>
+<td>📊 <strong>Overhead</strong></td>
+<td>High</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>📌 <strong>Use Case</strong></td>
+<td>File transfers, email, web browsing</td>
+<td>Streaming, gaming, DNS queries</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="conclusion">🏆 <strong>Conclusion</strong><a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>This document provides a structured overview of key network protocols, ensuring efficient communication across applications, devices, and networks. 🚀</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.top", "content.tabs.link", "content.code.copy", "content.action.edit"], "search": "../../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../../../../assets/javascripts/custom.js"></script>
+      
+        <script src="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"></script>
+      
+        <script src="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap"></script>
+      
+    
+  </body>
+</html>

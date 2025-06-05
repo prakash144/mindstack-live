@@ -1,0 +1,2684 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A comprehensive knowledge base covering various domains like AI, Cloud, Tech Stacks, Interview Practice, and UPSC Resources.">
+      
+      
+        <meta name="author" content="Mind Stack Team">
+      
+      
+        <link rel="canonical" href="https://mindstack-notes.com/Notes/Dev-Tech-Stacks/CSE-Core-Subjects/Computer%20Networks/3.1-Network_Cabling_And_Devices/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>📡 Network Cabling and Connectors - Mind Stack</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#network-cabling-and-connectors" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="Mind Stack" class="md-header__button md-logo" aria-label="Mind Stack" data-md-component="logo">
+      
+  <img src="../../../../../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mind Stack
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              📡 Network Cabling and Connectors
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../interview-prep/" class="md-tabs__link">
+          
+  
+  
+  Interview Prep
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../AI-Knowledge-Hub/" class="md-tabs__link">
+          
+  
+  
+  AI Knowledge Hub
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Cloud-Architect-Notes/" class="md-tabs__link">
+          
+  
+  
+  Cloud Architect Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  
+  Dev Tech Stacks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Interview-Coding-Practice/" class="md-tabs__link">
+          
+  
+  
+  Interview Coding Practice
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../UPSC-Resources/index.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  UPSC Resources
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Mind Stack" class="md-nav__button md-logo" aria-label="Mind Stack" data-md-component="logo">
+      
+  <img src="../../../../../assets/images/logo.png" alt="logo">
+
+    </a>
+    Mind Stack
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Interview Prep
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Interview Prep
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Experience
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Experience
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About Me
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Thales-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Thales Experience
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Oracle-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Oracle Experience
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Delhivery-CallHealth-Experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Delhivery & CallHealth Experience
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Behavioral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Behavioral & Soft Skills
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Technical-Backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Technical - Backend
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Technical-Frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Technical - Frontend
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Databases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Databases
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Code-Quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing & Code Quality
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Dev-Ops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DevOps & CI/CD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../interview-prep/Agile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agile Methodologies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    AI Knowledge Hub
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            AI Knowledge Hub
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../AI-Knowledge-Hub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../AI-Knowledge-Hub/Prompt-Engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Cloud Architect Notes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud Architect Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cloud-Architect-Notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    AWS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            AWS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cloud-Architect-Notes/AWS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AWS Certification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    GCP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            GCP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Cloud-Architect-Notes/GCP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GCP Certification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Dev Tech Stacks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Dev Tech Stacks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    CSE Core
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            CSE Core
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Computer Networks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operating Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DBMS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DBMS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Java
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Java
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/Quick-Revision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick Revision
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/Core-Java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Core Java
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Java/Spring-Boot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Spring Boot
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Core-Python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Core Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Python-For-Interview-Notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python Interview Notes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Python-For-All/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Complete Python Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/Flask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Flask Framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Python/concurrency-control-python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Concurrency in Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Golang
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Golang
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Golang/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    DevOps
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            DevOps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../DevOps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Interview Coding Practice
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Interview Coding Practice
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    System Design
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            System Design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/src/Solid-Principles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SOLID Principles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/src/HLD-Concept/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HLD Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/src/HLD-Interview-Questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HLD Interview Questions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/src/LLD-Design-Patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LLD Concepts & Design Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/src/LLD-Interview-Questions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LLD Interview Questions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    DSA
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            DSA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/src/DSA/DSA-PATTERNS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/src/DSA/DSA-SHEET/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sheet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Interview-Coding-Practice/google-docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google Docs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../UPSC-Resources/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UPSC Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importance" class="md-nav__link">
+    <span class="md-ellipsis">
+      📢 Importance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#twisted-pair-cables" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔗 Twisted Pair Cables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔗 Twisted Pair Cables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pros-cons" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Pros &amp; ❌ Cons
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-connectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔌 Common Connectors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fiber-optic-cables" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 Fiber Optic Cables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💡 Fiber Optic Cables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Types
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pros-cons_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Pros &amp; ❌ Cons
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-connectors_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔌 Common Connectors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coaxial-cables" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔌 Coaxial Cables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔌 Coaxial Cables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uses" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Uses
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pros-cons_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Pros &amp; ❌ Cons
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-connectors_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔌 Common Connectors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      🖧 Network Devices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🖧 Network Devices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importance_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 Importance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#devices-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Devices Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Devices Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#router" class="md-nav__link">
+    <span class="md-ellipsis">
+      📡 Router
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Switch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ Hub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌉 Bridge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repeater" class="md-nav__link">
+    <span class="md-ellipsis">
+      📶 Repeater
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-of-network-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚖️ Comparison of Network Devices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-revision-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Quick Revision Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="network-cabling-and-connectors">📡 Network Cabling and Connectors<a class="headerlink" href="#network-cabling-and-connectors" title="Permanent link">&para;</a></h1>
+<p>Network cabling provides the <strong>physical medium</strong> for data transfer, while connectors link cables to devices for seamless signal transmission.</p>
+<h2 id="table-of-contents">📌 Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#-importance">📢 Importance</a></li>
+<li><a href="#-twisted-pair-cables">🔗 Twisted Pair Cables</a></li>
+<li><a href="#-fiber-optic-cables">💡 Fiber Optic Cables</a></li>
+<li><a href="#-coaxial-cables">🔌 Coaxial Cables</a></li>
+<li><a href="#-network-devices">🖧 Network Devices</a></li>
+<li><a href="#-comparison-of-network-devices">⚖️ Comparison of Network Devices</a></li>
+<li><a href="#-quick-revision-summary">✅ Quick Revision Summary</a></li>
+</ul>
+<hr />
+<h2 id="importance">📢 Importance<a class="headerlink" href="#importance" title="Permanent link">&para;</a></h2>
+<ul>
+<li>✔️ Foundation for network communication 🏗️</li>
+<li>✔️ Determines <strong>speed, reliability, and scalability</strong> ⚡</li>
+<li>✔️ Impacts <strong>performance &amp; security</strong> 🔒</li>
+</ul>
+<hr />
+<h2 id="twisted-pair-cables">🔗 Twisted Pair Cables<a class="headerlink" href="#twisted-pair-cables" title="Permanent link">&para;</a></h2>
+<p>Two insulated copper wires twisted to reduce <strong>electromagnetic interference (EMI)</strong> and crosstalk.</p>
+<h3 id="types">🔍 Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Features</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>UTP (Unshielded Twisted Pair)</strong></td>
+<td>No shielding, cost-effective</td>
+<td>Common in Ethernet networks</td>
+</tr>
+<tr>
+<td><strong>STP (Shielded Twisted Pair)</strong></td>
+<td>Shielded for better interference resistance</td>
+<td>Industrial/high-noise environments</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pros-cons">✅ Pros &amp; ❌ Cons<a class="headerlink" href="#pros-cons" title="Permanent link">&para;</a></h3>
+<p>✔️ Cost-effective, easy to install
+✔️ Suitable for short to medium distances
+❌ Susceptible to interference (<strong>UTP</strong>)
+❌ Lower bandwidth than fiber optics</p>
+<h3 id="common-connectors">🔌 Common Connectors<a class="headerlink" href="#common-connectors" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>RJ45</strong> – Standard for Ethernet networking</li>
+<li><strong>RJ11</strong> – Used for telephone connections</li>
+</ul>
+<hr />
+<h2 id="fiber-optic-cables">💡 Fiber Optic Cables<a class="headerlink" href="#fiber-optic-cables" title="Permanent link">&para;</a></h2>
+<p>Transmit data as <strong>light signals</strong> through glass or plastic fibers for <strong>high-speed, long-distance</strong> communication.</p>
+<h3 id="types_1">🔍 Types<a class="headerlink" href="#types_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Features</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SMF (Single-Mode Fiber)</strong></td>
+<td>Uses a single light wave</td>
+<td>Long-distance communication (ISP backbones)</td>
+</tr>
+<tr>
+<td><strong>MMF (Multi-Mode Fiber)</strong></td>
+<td>Uses multiple light waves</td>
+<td>Short-distance networks (campuses, buildings)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pros-cons_1">✅ Pros &amp; ❌ Cons<a class="headerlink" href="#pros-cons_1" title="Permanent link">&para;</a></h3>
+<p>✔️ High bandwidth &amp; speed 🚀
+✔️ Immune to EMI 🛡️
+✔️ Ideal for long distances 🌍
+❌ Expensive to install &amp; maintain 💰
+❌ Fragile compared to copper cables ⚠️</p>
+<h3 id="common-connectors_1">🔌 Common Connectors<a class="headerlink" href="#common-connectors_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>LC (Lucent Connector)</strong> – High-density networks, data centers</li>
+<li><strong>SC (Subscriber Connector)</strong> – Enterprise networks, push-pull mechanism</li>
+<li><strong>ST (Straight Tip)</strong> – Older industrial networks</li>
+</ul>
+<hr />
+<h2 id="coaxial-cables">🔌 Coaxial Cables<a class="headerlink" href="#coaxial-cables" title="Permanent link">&para;</a></h2>
+<p>A central conductor with shielding for <strong>low-interference</strong> data transmission.</p>
+<h3 id="uses">🔍 Uses<a class="headerlink" href="#uses" title="Permanent link">&para;</a></h3>
+<p>✔️ <strong>Cable TV</strong>, broadband internet
+✔️ <strong>Older Ethernet networks</strong></p>
+<h3 id="pros-cons_2">✅ Pros &amp; ❌ Cons<a class="headerlink" href="#pros-cons_2" title="Permanent link">&para;</a></h3>
+<p>✔️ EMI-resistant due to shielding
+✔️ Durable for moderate distances
+❌ Bulkier and less flexible than twisted pair
+❌ Limited speed and bandwidth</p>
+<h3 id="common-connectors_2">🔌 Common Connectors<a class="headerlink" href="#common-connectors_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>BNC (Bayonet Neill–Concelman)</strong> – Security cameras, legacy Ethernet</li>
+<li><strong>F-Type</strong> – Cable TV, broadband</li>
+</ul>
+<hr />
+<h2 id="network-devices">🖧 Network Devices<a class="headerlink" href="#network-devices" title="Permanent link">&para;</a></h2>
+<p>Manage <strong>communication, routing, and data transfer</strong> in networks.</p>
+<h3 id="importance_1">📌 Importance<a class="headerlink" href="#importance_1" title="Permanent link">&para;</a></h3>
+<p>✔️ Facilitates <strong>data routing &amp; switching</strong> 🔀
+✔️ Improves <strong>network performance &amp; scalability</strong> 📊
+✔️ Ensures <strong>security &amp; data integrity</strong> 🔒</p>
+<h3 id="devices-overview">🔍 Devices Overview<a class="headerlink" href="#devices-overview" title="Permanent link">&para;</a></h3>
+<h4 id="router">📡 Router<a class="headerlink" href="#router" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Routes data</strong> between different networks 🌎</li>
+<li>Provides <strong>firewall, NAT, and security</strong> 🔐</li>
+<li><strong>Use Case:</strong> Homes, offices, ISPs</li>
+</ul>
+<h4 id="switch">🔄 Switch<a class="headerlink" href="#switch" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Connects <strong>multiple devices</strong> within a network 🏢</li>
+<li><strong>Layer 2 (Data Link Layer)</strong> device 📡</li>
+<li><strong>Use Case:</strong> LANs, servers, printers</li>
+</ul>
+<h4 id="hub">⚡ Hub<a class="headerlink" href="#hub" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Broadcasts</strong> data to all connected devices 📢</li>
+<li><strong>Layer 1 (Physical Layer)</strong> device 🛠️</li>
+<li><strong>Use Case:</strong> Small networks</li>
+</ul>
+<h4 id="bridge">🌉 Bridge<a class="headerlink" href="#bridge" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Connects and <strong>segments networks</strong> 🔗</li>
+<li><strong>Filters traffic based on MAC addresses</strong> 🎛️</li>
+<li><strong>Use Case:</strong> LAN expansion</li>
+</ul>
+<h4 id="repeater">📶 Repeater<a class="headerlink" href="#repeater" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Amplifies &amp; regenerates signals</strong> to extend network range 📡</li>
+<li><strong>Layer 1 (Physical Layer)</strong> device 🔋</li>
+<li><strong>Use Case:</strong> Long-distance communication, Wi-Fi extension</li>
+</ul>
+<hr />
+<h2 id="comparison-of-network-devices">⚖️ Comparison of Network Devices<a class="headerlink" href="#comparison-of-network-devices" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Device</th>
+<th>Layer</th>
+<th>Key Function</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Router</strong></td>
+<td>Network Layer</td>
+<td>Routes data between networks</td>
+<td>Internet access, WANs</td>
+</tr>
+<tr>
+<td><strong>Switch</strong></td>
+<td>Data Link Layer</td>
+<td>Forwards data to specific devices</td>
+<td>LAN communication</td>
+</tr>
+<tr>
+<td><strong>Hub</strong></td>
+<td>Physical Layer</td>
+<td>Broadcasts data to all devices</td>
+<td>Small networks</td>
+</tr>
+<tr>
+<td><strong>Bridge</strong></td>
+<td>Data Link Layer</td>
+<td>Connects and segments networks</td>
+<td>LAN expansion</td>
+</tr>
+<tr>
+<td><strong>Repeater</strong></td>
+<td>Physical Layer</td>
+<td>Amplifies and regenerates signals</td>
+<td>Extending network range</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="quick-revision-summary">✅ Quick Revision Summary<a class="headerlink" href="#quick-revision-summary" title="Permanent link">&para;</a></h2>
+<ul>
+<li>✔️ <strong>Twisted Pair Cables</strong> – Cost-effective, used in Ethernet networks (<strong>UTP, STP</strong>).</li>
+<li>✔️ <strong>Fiber Optic Cables</strong> – High-speed, long-distance (<strong>SMF, MMF</strong>), used in ISPs, data centers.</li>
+<li>✔️ <strong>Coaxial Cables</strong> – Used in cable TV, older networks, moderate speeds.</li>
+<li>✔️ <strong>Router</strong> – Routes data between networks, connects LANs to the Internet.</li>
+<li>✔️ <strong>Switch</strong> – Connects multiple devices in LANs, reducing congestion.</li>
+<li>✔️ <strong>Hub</strong> – Basic, inefficient, used in small networks.</li>
+<li>✔️ <strong>Bridge</strong> – Segments networks for better traffic management.</li>
+<li>✔️ <strong>Repeater</strong> – Amplifies signals for long-distance transmission.</li>
+</ul>
+<hr />
+<p><strong>📌 Keep learning and stay connected! 🚀</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.top", "content.tabs.link", "content.code.copy", "content.action.edit"], "search": "../../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../../../../assets/javascripts/custom.js"></script>
+      
+        <script src="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"></script>
+      
+        <script src="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap"></script>
+      
+    
+  </body>
+</html>
