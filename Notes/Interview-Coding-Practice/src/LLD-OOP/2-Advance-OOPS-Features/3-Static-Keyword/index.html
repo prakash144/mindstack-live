@@ -12,28 +12,24 @@
         <meta name="author" content="Mind Stack Team">
       
       
-        <link rel="canonical" href="https://mindstack-notes.com/Notes/Interview-Coding-Practice/src/Solid-Principles/">
+        <link rel="canonical" href="https://mindstack-notes.com/Notes/Interview-Coding-Practice/src/LLD-OOP/2-Advance-OOPS-Features/3-Static-Keyword/">
       
       
-        <link rel="prev" href="../../">
       
       
-        <link rel="next" href="../HLD-Concept/">
-      
-      
-      <link rel="icon" href="../../../../assets/images/favicon.ico">
+      <link rel="icon" href="../../../../../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>SOLID Principles - Mind Stack</title>
+        <title>📌 Understanding the static Keyword in Java - Mind Stack</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/custom.css">
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/custom.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#solid-principles-in-java" class="md-skip">
+        <a href="#understanding-the-static-keyword-in-java" class="md-skip">
           Skip to content
         </a>
       
@@ -94,9 +90,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="Mind Stack" class="md-header__button md-logo" aria-label="Mind Stack" data-md-component="logo">
+    <a href="../../../../../.." title="Mind Stack" class="md-header__button md-logo" aria-label="Mind Stack" data-md-component="logo">
       
-  <img src="../../../../assets/images/logo.png" alt="logo">
+  <img src="../../../../../../assets/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -113,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SOLID Principles
+              📌 Understanding the static Keyword in Java
             
           </span>
         </div>
@@ -198,7 +194,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+      <a href="../../../../../.." class="md-tabs__link">
         
   
   
@@ -219,7 +215,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../interview-prep/" class="md-tabs__link">
+        <a href="../../../../../interview-prep/" class="md-tabs__link">
           
   
   
@@ -239,7 +235,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../AI-Knowledge-Hub/" class="md-tabs__link">
+        <a href="../../../../../AI-Knowledge-Hub/" class="md-tabs__link">
           
   
   
@@ -259,7 +255,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../Cloud-Architect-Notes/" class="md-tabs__link">
+        <a href="../../../../../Cloud-Architect-Notes/" class="md-tabs__link">
           
   
   
@@ -279,7 +275,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../Dev-Tech-Stacks/" class="md-tabs__link">
+        <a href="../../../../../Dev-Tech-Stacks/" class="md-tabs__link">
           
   
   
@@ -295,13 +291,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../../" class="md-tabs__link">
           
   
   
@@ -319,7 +313,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../UPSC-Resources/" class="md-tabs__link">
+      <a href="../../../../../UPSC-Resources/" class="md-tabs__link">
         
   
   
@@ -354,9 +348,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Mind Stack" class="md-nav__button md-logo" aria-label="Mind Stack" data-md-component="logo">
+    <a href="../../../../../.." title="Mind Stack" class="md-nav__button md-logo" aria-label="Mind Stack" data-md-component="logo">
       
-  <img src="../../../../assets/images/logo.png" alt="logo">
+  <img src="../../../../../../assets/images/logo.png" alt="logo">
 
     </a>
     Mind Stack
@@ -371,7 +365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../../../../.." class="md-nav__link">
         
   
   
@@ -434,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interview-prep/" class="md-nav__link">
+      <a href="../../../../../interview-prep/" class="md-nav__link">
         
   
   
@@ -498,7 +492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interview-prep/Intro/" class="md-nav__link">
+      <a href="../../../../../interview-prep/Intro/" class="md-nav__link">
         
   
   
@@ -521,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interview-prep/Thales-experience/" class="md-nav__link">
+      <a href="../../../../../interview-prep/Thales-experience/" class="md-nav__link">
         
   
   
@@ -544,7 +538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interview-prep/Oracle-experience/" class="md-nav__link">
+      <a href="../../../../../interview-prep/Oracle-experience/" class="md-nav__link">
         
   
   
@@ -567,7 +561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interview-prep/Delhivery-CallHealth-Experience/" class="md-nav__link">
+      <a href="../../../../../interview-prep/Delhivery-CallHealth-Experience/" class="md-nav__link">
         
   
   
@@ -598,7 +592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interview-prep/Behavioral/" class="md-nav__link">
+      <a href="../../../../../interview-prep/Behavioral/" class="md-nav__link">
         
   
   
@@ -621,7 +615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interview-prep/Technical-Backend/" class="md-nav__link">
+      <a href="../../../../../interview-prep/Technical-Backend/" class="md-nav__link">
         
   
   
@@ -644,7 +638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interview-prep/Technical-Frontend/" class="md-nav__link">
+      <a href="../../../../../interview-prep/Technical-Frontend/" class="md-nav__link">
         
   
   
@@ -667,7 +661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interview-prep/Databases/" class="md-nav__link">
+      <a href="../../../../../interview-prep/Databases/" class="md-nav__link">
         
   
   
@@ -690,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interview-prep/Code-Quality/" class="md-nav__link">
+      <a href="../../../../../interview-prep/Code-Quality/" class="md-nav__link">
         
   
   
@@ -713,7 +707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interview-prep/Dev-Ops/" class="md-nav__link">
+      <a href="../../../../../interview-prep/Dev-Ops/" class="md-nav__link">
         
   
   
@@ -736,7 +730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interview-prep/Agile/" class="md-nav__link">
+      <a href="../../../../../interview-prep/Agile/" class="md-nav__link">
         
   
   
@@ -807,7 +801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../AI-Knowledge-Hub/" class="md-nav__link">
+      <a href="../../../../../AI-Knowledge-Hub/" class="md-nav__link">
         
   
   
@@ -830,7 +824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../AI-Knowledge-Hub/Prompt-Engineering/" class="md-nav__link">
+      <a href="../../../../../AI-Knowledge-Hub/Prompt-Engineering/" class="md-nav__link">
         
   
   
@@ -901,7 +895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Cloud-Architect-Notes/" class="md-nav__link">
+      <a href="../../../../../Cloud-Architect-Notes/" class="md-nav__link">
         
   
   
@@ -965,7 +959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Cloud-Architect-Notes/AWS/" class="md-nav__link">
+      <a href="../../../../../Cloud-Architect-Notes/AWS/" class="md-nav__link">
         
   
   
@@ -1037,7 +1031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Cloud-Architect-Notes/GCP/" class="md-nav__link">
+      <a href="../../../../../Cloud-Architect-Notes/GCP/" class="md-nav__link">
         
   
   
@@ -1116,7 +1110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Dev-Tech-Stacks/" class="md-nav__link">
+      <a href="../../../../../Dev-Tech-Stacks/" class="md-nav__link">
         
   
   
@@ -1180,7 +1174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Dev-Tech-Stacks/CSE-Core-Subjects/" class="md-nav__link">
+      <a href="../../../../../Dev-Tech-Stacks/CSE-Core-Subjects/" class="md-nav__link">
         
   
   
@@ -1203,7 +1197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Dev-Tech-Stacks/CSE-Core-Subjects/Computer%20Networks/" class="md-nav__link">
+      <a href="../../../../../Dev-Tech-Stacks/CSE-Core-Subjects/Computer%20Networks/" class="md-nav__link">
         
   
   
@@ -1226,7 +1220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Dev-Tech-Stacks/CSE-Core-Subjects/OS/" class="md-nav__link">
+      <a href="../../../../../Dev-Tech-Stacks/CSE-Core-Subjects/OS/" class="md-nav__link">
         
   
   
@@ -1249,7 +1243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Dev-Tech-Stacks/CSE-Core-Subjects/DBMS/" class="md-nav__link">
+      <a href="../../../../../Dev-Tech-Stacks/CSE-Core-Subjects/DBMS/" class="md-nav__link">
         
   
   
@@ -1321,7 +1315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Dev-Tech-Stacks/Java/" class="md-nav__link">
+      <a href="../../../../../Dev-Tech-Stacks/Java/" class="md-nav__link">
         
   
   
@@ -1344,7 +1338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Dev-Tech-Stacks/Java/Quick-Revision/" class="md-nav__link">
+      <a href="../../../../../Dev-Tech-Stacks/Java/Quick-Revision/" class="md-nav__link">
         
   
   
@@ -1367,7 +1361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Dev-Tech-Stacks/Java/Core-Java/" class="md-nav__link">
+      <a href="../../../../../Dev-Tech-Stacks/Java/Core-Java/" class="md-nav__link">
         
   
   
@@ -1390,7 +1384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Dev-Tech-Stacks/Java/Spring-Boot/" class="md-nav__link">
+      <a href="../../../../../Dev-Tech-Stacks/Java/Spring-Boot/" class="md-nav__link">
         
   
   
@@ -1462,7 +1456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Dev-Tech-Stacks/Python/" class="md-nav__link">
+      <a href="../../../../../Dev-Tech-Stacks/Python/" class="md-nav__link">
         
   
   
@@ -1485,7 +1479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Dev-Tech-Stacks/Python/Core-Python/" class="md-nav__link">
+      <a href="../../../../../Dev-Tech-Stacks/Python/Core-Python/" class="md-nav__link">
         
   
   
@@ -1508,7 +1502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Dev-Tech-Stacks/Python/Python-For-Interview-Notes/" class="md-nav__link">
+      <a href="../../../../../Dev-Tech-Stacks/Python/Python-For-Interview-Notes/" class="md-nav__link">
         
   
   
@@ -1531,7 +1525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Dev-Tech-Stacks/Python/Python-For-All/" class="md-nav__link">
+      <a href="../../../../../Dev-Tech-Stacks/Python/Python-For-All/" class="md-nav__link">
         
   
   
@@ -1554,7 +1548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Dev-Tech-Stacks/Python/Flask/" class="md-nav__link">
+      <a href="../../../../../Dev-Tech-Stacks/Python/Flask/" class="md-nav__link">
         
   
   
@@ -1577,7 +1571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Dev-Tech-Stacks/Python/concurrency-control-python/" class="md-nav__link">
+      <a href="../../../../../Dev-Tech-Stacks/Python/concurrency-control-python/" class="md-nav__link">
         
   
   
@@ -1649,7 +1643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Dev-Tech-Stacks/Golang/" class="md-nav__link">
+      <a href="../../../../../Dev-Tech-Stacks/Golang/" class="md-nav__link">
         
   
   
@@ -1721,7 +1715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Dev-Tech-Stacks/DevOps/" class="md-nav__link">
+      <a href="../../../../../Dev-Tech-Stacks/DevOps/" class="md-nav__link">
         
   
   
@@ -1756,29 +1750,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
@@ -1791,7 +1780,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Interview Coding Practice
@@ -1805,7 +1794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../../../" class="md-nav__link">
         
   
   
@@ -1825,8 +1814,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1837,11 +1824,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
         
           
           <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
@@ -1857,7 +1844,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_2">
             <span class="md-nav__icon md-icon"></span>
             System Design
@@ -1868,258 +1855,10 @@
                 
   
   
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    SOLID Principles
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    SOLID Principles
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Overview">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#single-responsibility-principle-srp" class="md-nav__link">
-    <span class="md-ellipsis">
-      Single Responsibility Principle (SRP)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#class-descriptions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Class Descriptions
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#openclosed-principle-ocp" class="md-nav__link">
-    <span class="md-ellipsis">
-      Open/Closed Principle (OCP)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Open/Closed Principle (OCP)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#classes-involved" class="md-nav__link">
-    <span class="md-ellipsis">
-      Classes Involved:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#class-descriptions_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Class Descriptions
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#liskov-substitution-principle-lsp" class="md-nav__link">
-    <span class="md-ellipsis">
-      Liskov Substitution Principle (LSP)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Liskov Substitution Principle (LSP)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#classes-involved_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Classes Involved:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#class-descriptions_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Class Descriptions
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interface-segregation-principle-isp" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interface Segregation Principle (ISP)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Interface Segregation Principle (ISP)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#explanation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Explanation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#has-a-relationship" class="md-nav__link">
-    <span class="md-ellipsis">
-      Has-a Relationship:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#is-a-relationship" class="md-nav__link">
-    <span class="md-ellipsis">
-      Is-a Relationship:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependency-inversion-principle-dip" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dependency Inversion Principle (DIP)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Dependency Inversion Principle (DIP)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#explanation_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Explanation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#has-a-relationship_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Has-a Relationship:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#is-a-relationship_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Is-a Relationship:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
   
   
     <li class="md-nav__item">
-      <a href="../HLD-Concept/" class="md-nav__link">
+      <a href="../../../HLD-Concept/" class="md-nav__link">
         
   
   
@@ -2142,7 +1881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../HLD-Interview-Questions/" class="md-nav__link">
+      <a href="../../../HLD-Interview-Questions/" class="md-nav__link">
         
   
   
@@ -2165,12 +1904,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../LLD-Design-Patterns/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    LLD Concepts & Design Patterns
+    LLD OOPS
     
   </span>
   
@@ -2188,7 +1927,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../LLD-Interview-Questions/" class="md-nav__link">
+      <a href="../../../LLD-Design-Patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LLD Design Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../LLD-Interview-Questions/" class="md-nav__link">
         
   
   
@@ -2260,7 +2022,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../DSA/DSA-PATTERNS/" class="md-nav__link">
+      <a href="../../../DSA/DSA-PATTERNS/" class="md-nav__link">
         
   
   
@@ -2283,7 +2045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../DSA/DSA-SHEET/" class="md-nav__link">
+      <a href="../../../DSA/DSA-SHEET/" class="md-nav__link">
         
   
   
@@ -2314,7 +2076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../google-docs/" class="md-nav__link">
+      <a href="../../../../google-docs/" class="md-nav__link">
         
   
   
@@ -2344,7 +2106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../UPSC-Resources/" class="md-nav__link">
+      <a href="../../../../../UPSC-Resources/" class="md-nav__link">
         
   
   
@@ -2386,28 +2148,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#purpose" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      🎯 Purpose
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Overview">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-members-core-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 Static Members: Core Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧱 Static Members: Core Concepts">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#single-responsibility-principle-srp" class="md-nav__link">
+  <a href="#static-variables-class-variables" class="md-nav__link">
     <span class="md-ellipsis">
-      Single Responsibility Principle (SRP)
+      🔹 Static Variables (Class Variables)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#class-descriptions" class="md-nav__link">
+  <a href="#static-methods" class="md-nav__link">
     <span class="md-ellipsis">
-      Class Descriptions
+      🔹 Static Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Static Blocks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#static-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Static Classes
     </span>
   </a>
   
@@ -2419,28 +2208,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#openclosed-principle-ocp" class="md-nav__link">
+  <a href="#interaction-static-vs-non-static" class="md-nav__link">
     <span class="md-ellipsis">
-      Open/Closed Principle (OCP)
+      🔄 Interaction: Static vs Non-Static
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Open/Closed Principle (OCP)">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-trade-offs-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Design Trade-Offs &amp; Use Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✅ Design Trade-Offs &amp; Use Cases">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#classes-involved" class="md-nav__link">
+  <a href="#advantages" class="md-nav__link">
     <span class="md-ellipsis">
-      Classes Involved:
+      👍 Advantages
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#class-descriptions_1" class="md-nav__link">
+  <a href="#limitations" class="md-nav__link">
     <span class="md-ellipsis">
-      Class Descriptions
+      🚫 Limitations
     </span>
   </a>
   
@@ -2452,28 +2250,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#liskov-substitution-principle-lsp" class="md-nav__link">
+  <a href="#when-to-use-static-design-driven-view" class="md-nav__link">
     <span class="md-ellipsis">
-      Liskov Substitution Principle (LSP)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Liskov Substitution Principle (LSP)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#classes-involved_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Classes Involved:
+      🛠️ When to Use Static (Design-Driven View)
     </span>
   </a>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#real-system-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Real System Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧩 Real System Example">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#class-descriptions_2" class="md-nav__link">
+  <a href="#singleton-static-utility" class="md-nav__link">
     <span class="md-ellipsis">
-      Class Descriptions
+      Singleton + Static Utility
     </span>
   </a>
   
@@ -2485,86 +2283,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#interface-segregation-principle-isp" class="md-nav__link">
+  <a href="#recap" class="md-nav__link">
     <span class="md-ellipsis">
-      Interface Segregation Principle (ISP)
+      📚 Recap
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Interface Segregation Principle (ISP)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#explanation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Explanation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#has-a-relationship" class="md-nav__link">
-    <span class="md-ellipsis">
-      Has-a Relationship:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#is-a-relationship" class="md-nav__link">
-    <span class="md-ellipsis">
-      Is-a Relationship:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependency-inversion-principle-dip" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dependency Inversion Principle (DIP)
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Dependency Inversion Principle (DIP)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#explanation_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Explanation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#has-a-relationship_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Has-a Relationship:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#is-a-relationship_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Is-a Relationship:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2584,196 +2307,199 @@
 
 
 
-<h1 id="solid-principles-in-java">SOLID Principles in Java<a class="headerlink" href="#solid-principles-in-java" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>This project demonstrates the application of the <strong>SOLID principles</strong> using Java classes. SOLID is an acronym for five design principles intended to make software designs more understandable, flexible, and maintainable. The principles are:</p>
-<ol>
-<li><strong>Single Responsibility Principle (SRP)</strong></li>
-<li><strong>Open/Closed Principle (OCP)</strong></li>
-<li><strong>Liskov Substitution Principle (LSP)</strong></li>
-<li><strong>Interface Segregation Principle (ISP)</strong></li>
-<li><strong>Dependency Inversion Principle (DIP)</strong></li>
-</ol>
+<h1 id="understanding-the-static-keyword-in-java">📌 Understanding the <code>static</code> Keyword in Java<a class="headerlink" href="#understanding-the-static-keyword-in-java" title="Permanent link">&para;</a></h1>
+<h2 id="purpose">🎯 Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Understand how <code>static</code> enables memory-efficient, class-level programming in Java</li>
+<li>Apply <code>static</code> to utility design, shared configuration, and initialization patterns</li>
+<li>Learn when and why to use static for clean LLD</li>
+</ul>
 <hr />
-<h3 id="single-responsibility-principle-srp">Single Responsibility Principle (SRP)<a class="headerlink" href="#single-responsibility-principle-srp" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="c">                              </span><span class="nb">+-------------------------+</span>
-<span class="c">                              |   SingleResponsibility  |</span>
-<span class="c">                              |       (Main Class)      |</span>
-<span class="c">                              </span><span class="nb">+-------------------------+</span>
-<span class="c">                                           |</span>
-<span class="c">                  </span><span class="nb">+------------------------+------------------------+</span>
-<span class="c">                  |                                                 |</span>
-<span class="c">    </span><span class="nb">+------------------------+</span><span class="c">                      </span><span class="nb">+-------------------------+</span>
-<span class="c">    |        Marker          |                      |        Invoice          |</span>
-<span class="c">    |   (Holds marker data)  |                      | (Calculates total cost) |</span>
-<span class="c">    </span><span class="nb">+------------------------+</span><span class="c">                      </span><span class="nb">+-------------------------+</span>
-<span class="c">    |                                                           |</span>
-<span class="c">    </span><span class="nb">+------------------------+</span><span class="c">                      </span><span class="nb">+-------------------------+</span>
-<span class="c">    | </span><span class="nb">-</span><span class="c"> getName()            |                      | </span><span class="nb">-</span><span class="c"> getMarker()           |</span>
-<span class="c">    | </span><span class="nb">-</span><span class="c"> getColor()           |                      | </span><span class="nb">-</span><span class="c"> getQuantity()         |</span>
-<span class="c">    | </span><span class="nb">-</span><span class="c"> getYear()            |                      | </span><span class="nb">-</span><span class="c"> calculateTotal()      |</span>
-<span class="c">    | </span><span class="nb">-</span><span class="c"> getPrice()           |                      </span><span class="nb">+-------------------------+</span>
-<span class="c">    </span><span class="nb">+------------------------+</span><span class="c">                                </span>
-<span class="c">    </span><span class="nb">+-------------------------+</span>
-<span class="c">    |      InvoiceDao         |</span>
-<span class="c">    |  (Saves to Database)    |</span>
-<span class="c">    </span><span class="nb">+-------------------------+</span>
-<span class="c">    | </span><span class="nb">-</span><span class="c"> saveToDatabase()      |</span>
-<span class="c">    </span><span class="nb">+-------------------------+</span>
-<span class="c">    |</span>
-<span class="c">    </span><span class="nb">+-------------------------+</span>
-<span class="c">    |    InvoicePrinter       |</span>
-<span class="c">    |  (Prints Invoice Info)  |</span>
-<span class="c">    </span><span class="nb">+-------------------------+</span>
-<span class="c">    | </span><span class="nb">-</span><span class="c"> print()               |</span>
-<span class="c">    </span><span class="nb">+-------------------------+</span>
+<h2 id="static-members-core-concepts">🧱 Static Members: Core Concepts<a class="headerlink" href="#static-members-core-concepts" title="Permanent link">&para;</a></h2>
+<h3 id="static-variables-class-variables">🔹 Static Variables (Class Variables)<a class="headerlink" href="#static-variables-class-variables" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Declared with <code>static</code> keyword inside a class, outside methods</li>
+<li>Shared across <strong>all instances</strong> of the class</li>
+<li>Loaded <strong>once</strong> at class loading time</li>
+<li>Useful for <strong>shared state</strong>, <strong>global counters</strong>, or <strong>configuration</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span> <span class="nc">Config</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MAX_USERS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="c1">// shared across all instances</span>
+<span class="p">}</span>
 </code></pre></div>
 
-<h3 id="class-descriptions">Class Descriptions<a class="headerlink" href="#class-descriptions" title="Permanent link">&para;</a></h3>
+<h3 id="static-methods">🔹 Static Methods<a class="headerlink" href="#static-methods" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Marker:</strong> Represents a marker with properties like name, color, year, and price. It has a single responsibility of managing marker information.</li>
-<li><strong>Invoice:</strong> Manages the relationship between a Marker and its quantity. It calculates the total price based on the marker's price and quantity.</li>
-<li><strong>InvoiceDao:</strong> Handles the persistence of the Invoice data, such as saving it to a database.</li>
-<li><strong>InvoicePrinter:</strong> Prints invoice details to the console, adhering to the SRP by handling only printing logic.</li>
+<li>Bound to <strong>class</strong>, not instances</li>
+<li>Can be called <strong>without creating an object</strong></li>
+<li>Can't access non-static members directly (no instance context)</li>
+<li>Use case: <strong>utility</strong>, <strong>factory methods</strong>, <strong>stateless operations</strong></li>
 </ul>
-<hr />
-<h2 id="openclosed-principle-ocp">Open/Closed Principle (OCP)<a class="headerlink" href="#openclosed-principle-ocp" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>                            +---------------------+
-                            |    InvoiceDao       |
-                            |  (Interface)        |
-                            +---------------------+
-                                      |
-      +-------------------------------+------------------------------+
-      |                                                              |
-+------------------------+                               +------------------------+
-|   DatabaseInvoiceDao   |                               |    FileInvoiceDao      |
-| (Implements InvoiceDao)|                               | (Implements InvoiceDao)|
-+------------------------+                               +------------------------+
-            |                                                            |
-            v                                                            v
-save(Invoice) (Saves to DB)                                   save(Invoice) (Saves to File)
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span> <span class="nc">MathUtils</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 
-<h3 id="classes-involved">Classes Involved:<a class="headerlink" href="#classes-involved" title="Permanent link">&para;</a></h3>
+<h3 id="static-blocks">🔹 Static Blocks<a class="headerlink" href="#static-blocks" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>InvoiceDao</strong> (interface)</li>
-<li><strong>DatabaseInvoiceDao</strong></li>
-<li><strong>FileInvoiceDao</strong></li>
+<li>Executes <strong>once</strong> when the class is loaded</li>
+<li>Used for initializing static variables with logic</li>
 </ul>
-<p>The Open/Closed Principle states that software entities should be open for extension but closed for modification. This means that new functionality should be added with new code, without altering existing code.</p>
-<h3 id="class-descriptions_1">Class Descriptions<a class="headerlink" href="#class-descriptions_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>InvoiceDao:</strong> An interface that declares a method <code>save(Invoice invoice)</code> for saving invoices. Different implementations can extend this interface.</li>
-<li><strong>DatabaseInvoiceDao:</strong> Implements <code>InvoiceDao</code> to save invoices to a database.</li>
-<li><strong>FileInvoiceDao:</strong> Implements <code>InvoiceDao</code> to save invoices to a file.</li>
-<li><strong>Main Class:</strong> <code>OpenClosed_2</code> demonstrates the use of different <code>InvoiceDao</code> implementations without changing the class itself.</li>
-</ul>
-<hr />
-<h2 id="liskov-substitution-principle-lsp">Liskov Substitution Principle (LSP)<a class="headerlink" href="#liskov-substitution-principle-lsp" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="c">                      </span><span class="nb">+------------------------+</span>
-<span class="c">                      |     easy</span><span class="nt">.</span><span class="c">educativeIO</span><span class="nt">.</span><span class="c">Vehicle            |</span>
-<span class="c">                      |  </span><span class="nb">+</span><span class="c"> getNumberOfWheels() |</span>
-<span class="c">                      </span><span class="nb">+------------------------+</span>
-<span class="c">                             /     \</span>
-<span class="c">       </span><span class="nb">+----------------+</span><span class="c">   </span><span class="nb">+------------------+</span>
-<span class="c">       | EngineVehicle  |   |     Bicycle      |</span>
-<span class="c">       | </span><span class="nb">+</span><span class="c"> hasEngine()  |   |  (No Engine)     |</span>
-<span class="c">       | (4 wheels)     |   |  (2 wheels)      |</span>
-<span class="c">       </span><span class="nb">+----------------+</span><span class="c">   </span><span class="nb">+------------------+</span>
-<span class="c">         /        \</span>
-<span class="nb">+---------------+</span><span class="c"> </span><span class="nb">+---------------+</span>
-<span class="c">|      easy</span><span class="nt">.</span><span class="c">educativeIO</span><span class="nt">.</span><span class="c">Car      | |  MotorCycle   |</span>
-<span class="c">| (inherits EV) | | (inherits EV) |</span>
-<span class="nb">+---------------+</span><span class="c"> </span><span class="nb">+---------------+</span>
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span> <span class="nc">AppConfig</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">ENV</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">ENV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">getenv</span><span class="p">(</span><span class="s">&quot;ENV_MODE&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// read at class load time</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 
-<h3 id="classes-involved_1">Classes Involved:<a class="headerlink" href="#classes-involved_1" title="Permanent link">&para;</a></h3>
+<h3 id="static-classes">🔹 Static Classes<a class="headerlink" href="#static-classes" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>easy.educativeIO.Vehicle</strong> (Base class)</li>
-<li><strong>EngineVehicle</strong> (Derived class)</li>
-<li><strong>easy.educativeIO.Car</strong>, <strong>MotorCycle</strong>, <strong>Bicycle</strong> (Subclasses)</li>
+<li>Nested classes can be made static (no reference to outer class instance)</li>
+<li>Used for grouping related helper logic</li>
 </ul>
-<p>The Liskov Substitution Principle states that objects of a derived class should be able to replace objects of the base class without affecting the correctness of the program.</p>
-<h3 id="class-descriptions_2">Class Descriptions<a class="headerlink" href="#class-descriptions_2" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>easy.educativeIO.Vehicle:</strong> A base class representing general vehicles with a method <code>getNumberOfWheels</code>.</li>
-<li><strong>EngineVehicle:</strong> Extends <code>easy.educativeIO.Vehicle</code> to include engine-specific behavior. Represents vehicles with engines.</li>
-<li><strong>easy.educativeIO.Car</strong> and <strong>MotorCycle:</strong> Extend <code>EngineVehicle</code>, inheriting properties of vehicles with engines.</li>
-<li><strong>Bicycle:</strong> Extends <code>easy.educativeIO.Vehicle</code> without adding or modifying behavior related to engines, adhering to LSP.</li>
-</ul>
-<hr />
-<h2 id="interface-segregation-principle-isp">Interface Segregation Principle (ISP)<a class="headerlink" href="#interface-segregation-principle-isp" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="nb">+--------------------+</span><span class="c">                </span><span class="nb">+--------------------+</span>
-<span class="c">| WaiterInterface    |                | ChefInterface      |</span>
-<span class="nb">+--------------------+</span><span class="c">                </span><span class="nb">+--------------------+</span>
-<span class="c">| </span><span class="nb">+</span><span class="c"> serve()          |                | </span><span class="nb">+</span><span class="c"> cookFood()       |</span>
-<span class="c">| </span><span class="nb">+</span><span class="c"> takeOrder()      |                | </span><span class="nb">+</span><span class="c"> decideMenu()     |</span>
-<span class="nb">+--------------------+</span><span class="c">                </span><span class="nb">+--------------------+</span>
-<span class="c">           |                                    |</span>
-<span class="nb">+------------------+</span><span class="c">                  </span><span class="nb">+------------------+</span>
-<span class="c">| Waiter           |                  | Chef             |</span>
-<span class="nb">+------------------+</span><span class="c">                  </span><span class="nb">+------------------+</span>
-<span class="c">| </span><span class="nb">+</span><span class="c"> serve()        |                  | </span><span class="nb">+</span><span class="c"> cookFood()     |</span>
-<span class="c">| </span><span class="nb">+</span><span class="c"> takeOrder()    |                  | </span><span class="nb">+</span><span class="c"> decideMenu()   |</span>
-<span class="nb">+------------------+</span><span class="c">                  </span><span class="nb">+------------------+</span>
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span> <span class="nc">DBConnection</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Builder</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">static</span><span class="w"> </span><span class="n">DBConnection</span><span class="w"> </span><span class="nf">build</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DBConnection</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 
-<p>This principle ensures that no client is forced to depend on methods it does not use.</p>
-<h3 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h3>
-<p>The <code>WaiterInterface</code> and <code>ChefInterface</code> segregate responsibilities, ensuring that the <code>Waiter</code> and <code>Chef</code> classes implement only the methods they need.</p>
-<h3 id="has-a-relationship">Has-a Relationship:<a class="headerlink" href="#has-a-relationship" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Waiter</strong> has actions like <code>serve</code> and <code>takeOrder</code>.</li>
-<li><strong>Chef</strong> has actions like <code>cookFood</code> and <code>decideMenu</code>.</li>
-</ul>
-<h3 id="is-a-relationship">Is-a Relationship:<a class="headerlink" href="#is-a-relationship" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Waiter</strong> is a <code>WaiterInterface</code>.</li>
-<li><strong>Chef</strong> is a <code>ChefInterface</code>.</li>
-</ul>
 <hr />
-<h2 id="dependency-inversion-principle-dip">Dependency Inversion Principle (DIP)<a class="headerlink" href="#dependency-inversion-principle-dip" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="nb">+--------------------+</span><span class="c">         </span><span class="nb">+--------------------+</span>
-<span class="c">|   Keyboard         |         |      Mouse         |</span>
-<span class="nb">+--------------------+</span><span class="c">         </span><span class="nb">+--------------------+</span>
-<span class="c">| </span><span class="nb">+</span><span class="c"> type()           |         | </span><span class="nb">+</span><span class="c"> click()          |</span>
-<span class="nb">+--------------------+</span><span class="c">         </span><span class="nb">+--------------------+</span>
-<span class="c">/      \                      /       \</span>
-<span class="nb">+---------------+</span><span class="c">         </span><span class="nb">+------------------------+</span>
-<span class="c">| WiredKeyboard |         |      WiredMouse        |</span>
-<span class="nb">+---------------+</span><span class="c">         </span><span class="nb">+------------------------+</span>
-<span class="c">| </span><span class="nb">+</span><span class="c"> type()      |         | </span><span class="nb">+</span><span class="c"> click()              |</span>
-<span class="nb">+---------------+</span><span class="c">         </span><span class="nb">+------------------------+</span>
+<h2 id="interaction-static-vs-non-static">🔄 Interaction: Static vs Non-Static<a class="headerlink" href="#interaction-static-vs-non-static" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Member Type</th>
+<th>Can Access Static</th>
+<th>Can Access Non-Static</th>
+<th>Requires Instance?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Static Method</td>
+<td>✅ Yes</td>
+<td>❌ No</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td>Non-Static Method</td>
+<td>✅ Yes</td>
+<td>✅ Yes</td>
+<td>✅ Yes</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Static members <strong>cannot access</strong> non-static members directly (no <code>this</code> context)</li>
+<li>Non-static members <strong>can access</strong> both</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span> <span class="nc">Demo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
 
-<span class="nb">+-----------------------+</span><span class="c">    </span><span class="nb">+---------------------------+</span>
-<span class="c">|  BluetoothKeyboard    |    |     BluetoothMouse        |</span>
-<span class="nb">+-----------------------+</span><span class="c">    </span><span class="nb">+---------------------------+</span>
-<span class="c">| </span><span class="nb">+</span><span class="c"> type()              |    | </span><span class="nb">+</span><span class="c"> click()                 |</span>
-<span class="nb">+-----------------------+</span><span class="c">    </span><span class="nb">+---------------------------+</span>
+<span class="w">    </span><span class="n">Demo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">++</span><span class="n">counter</span><span class="p">;</span><span class="w"> </span><span class="c1">// valid: static used inside non-static</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="nb">+-------------------------------------------------------+</span>
-<span class="c">|                        MacBook                        |</span>
-<span class="nb">+-------------------------------------------------------+</span>
-<span class="c">| </span><span class="nb">-</span><span class="c"> keyboard: Keyboard                                  |</span>
-<span class="c">| </span><span class="nb">-</span><span class="c"> mouse: Mouse                                        |</span>
-<span class="nb">+-------------------------------------------------------+</span>
-<span class="c">| </span><span class="nb">+</span><span class="c"> useLaptop()                                         |</span>
-<span class="nb">+-------------------------------------------------------+</span>
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">log</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// System.out.println(id); ❌ not allowed</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 
-<p>This principle states that high-level modules should depend on abstractions rather than concrete implementations.</p>
-<h3 id="explanation_1">Explanation<a class="headerlink" href="#explanation_1" title="Permanent link">&para;</a></h3>
-<p>The <code>MacBook</code> class depends on the abstractions <code>Keyboard</code> and <code>Mouse</code> rather than specific implementations, allowing flexible configuration with different peripheral types.</p>
-<h3 id="has-a-relationship_1">Has-a Relationship:<a class="headerlink" href="#has-a-relationship_1" title="Permanent link">&para;</a></h3>
+<hr />
+<h2 id="design-trade-offs-use-cases">✅ Design Trade-Offs &amp; Use Cases<a class="headerlink" href="#design-trade-offs-use-cases" title="Permanent link">&para;</a></h2>
+<h3 id="advantages">👍 Advantages<a class="headerlink" href="#advantages" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>MacBook</strong> has a <code>Keyboard</code> and a <code>Mouse</code>.</li>
+<li>✅ <strong>Memory efficiency</strong>: static variables initialized once</li>
+<li>✅ <strong>Utility methods</strong>: clean separation from instance behavior</li>
+<li>✅ <strong>Global config</strong>: single source of truth</li>
+<li>✅ <strong>Factory pattern</strong>: static builders for object creation</li>
 </ul>
-<h3 id="is-a-relationship_1">Is-a Relationship:<a class="headerlink" href="#is-a-relationship_1" title="Permanent link">&para;</a></h3>
+<h3 id="limitations">🚫 Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>WiredKeyboard</strong> and <strong>BluetoothKeyboard</strong> are types of <code>Keyboard</code>.</li>
-<li><strong>WiredMouse</strong> and <strong>BluetoothMouse</strong> are types of <code>Mouse</code>.</li>
+<li>❌ <strong>Tight coupling</strong> if overused</li>
+<li>❌ <strong>Difficult to mock/test</strong> static methods in unit tests</li>
+<li>❌ <strong>State management</strong> becomes complex in multithreaded environments</li>
 </ul>
 <hr />
+<h2 id="when-to-use-static-design-driven-view">🛠️ When to Use Static (Design-Driven View)<a class="headerlink" href="#when-to-use-static-design-driven-view" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Use Static?</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Utility or helper method</td>
+<td>✅ Yes</td>
+<td>No need for object state</td>
+</tr>
+<tr>
+<td>Shared configuration value</td>
+<td>✅ Yes</td>
+<td>Common across instances</td>
+</tr>
+<tr>
+<td>Shared counter/id generator</td>
+<td>✅ Yes</td>
+<td>One-time load &amp; reuse</td>
+</tr>
+<tr>
+<td>Business logic tied to object</td>
+<td>❌ No</td>
+<td>Needs instance-specific state</td>
+</tr>
+<tr>
+<td>Polymorphism/overriding</td>
+<td>❌ No</td>
+<td>Static methods can't be overridden</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="real-system-example">🧩 Real System Example<a class="headerlink" href="#real-system-example" title="Permanent link">&para;</a></h2>
+<h3 id="singleton-static-utility">Singleton + Static Utility<a class="headerlink" href="#singleton-static-utility" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kd">class</span> <span class="nc">Logger</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Logger</span><span class="w"> </span><span class="n">instance</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="nf">Logger</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Logger</span><span class="w"> </span><span class="nf">getInstance</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">instance</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Logger</span><span class="p">();</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">instance</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">log</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<ul>
+<li><code>static</code> method for singleton access</li>
+<li>Avoids multiple logger instances (memory safe)</li>
+</ul>
+<hr />
+<h2 id="recap">📚 Recap<a class="headerlink" href="#recap" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Use <code>static</code> to <strong>reduce memory footprint</strong>, simplify <strong>utility logic</strong>, and maintain <strong>shared state</strong></li>
+<li>Avoid it for anything that depends on <strong>object behavior</strong>, <strong>state</strong>, or needs <strong>test flexibility</strong></li>
+<li>Think in terms of <strong>ownership</strong>: if the data/logic belongs to the class (not instance), it should be static</li>
+</ul>
+<hr />
+<blockquote>
+<p>The <code>static</code> keyword defines class-level data or behavior, ensuring shared access across all instances and enabling utility-style design without object instantiation.</p>
+</blockquote>
 
 
 
@@ -2830,12 +2556,12 @@ save(Invoice) (Saves to DB)                                   save(Invoice) (Sav
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.top", "content.tabs.link", "content.code.copy", "content.action.edit"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../../../..", "features": ["navigation.tabs", "navigation.top", "content.tabs.link", "content.code.copy", "content.action.edit"], "search": "../../../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="../../../../assets/javascripts/custom.js"></script>
+        <script src="../../../../../../assets/javascripts/custom.js"></script>
       
         <script src="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"></script>
       
